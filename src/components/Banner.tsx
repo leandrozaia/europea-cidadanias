@@ -1,5 +1,6 @@
 import { MdOutlineExpandMore } from "react-icons/md"
 import Image from "next/image"
+import Link from "next/link"
 
 export function Banner() {
   return (
@@ -29,7 +30,9 @@ export function Banner() {
           />
         </div>
       </div>
-      <MdOutlineExpandMore className="absolute bottom-8 z-10 w-16 h-16 text-white" />
+      <Link href="/#about-us" className="absolute bottom-8 z-10">
+        <MdOutlineExpandMore className="w-16 h-16 text-white" />
+      </Link>
     </div>
   )
 }
