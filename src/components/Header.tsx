@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { MdMenu } from "react-icons/md"
 import { useState } from "react"
 
@@ -8,8 +9,15 @@ export function Header() {
   return (
     <header className="w-full bg-main fixed z-50 top-0">
       <div className="max-w-7xl mx-auto py-6 relative flex justify-end px-4 xl:px-0">
-        <div className="w-36 sm:w-48 h-24 sm:h-28 rounded-b-3xl bg-white top-0 left-4 xl:left-0 absolute z-10 flex justify-center items-center">
-          <h1 className="text-main text-4xl font-bold">LOGO</h1>
+        <div className="w-36 sm:w-48 h-24 sm:h-28 rounded-b-3xl bg-white top-0 left-4 xl:left-0 absolute z-10 flex justify-center items-center p-4">
+          <Image
+            src="/logo_01.png"
+            alt="Logotipo da Europea Cidadanias"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full"
+          />
         </div>
         <nav className="hidden sm:flex gap-8 items-center">
           <Link className="text-white font-bold" href="#">
