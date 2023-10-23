@@ -30,7 +30,7 @@ export function AboutUs() {
             width={0}
             height={0}
             sizes="100vw"
-            className="md:absolute bottom-0 right-0 lg:-right-10 w-[384px] h-auto mx-auto md:mx-0"
+            className="md:absolute bottom-0 right-0 lg:-right-10 w-5/6 sm:w-2/4 lg:w-1/3 mx-auto md:mx-0"
           />
         </div>
       </div>
