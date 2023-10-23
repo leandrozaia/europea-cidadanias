@@ -8,10 +8,10 @@ export function Service() {
       <h3 className="text-main text-lg font-bold text-center">
         Cidadania Italiana
       </h3>
-      <p className="text-justify">
+      <p className="text-sm font-medium text-justify text-main">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dapibus sem ex, eu congue turpis tempor in.
       </p>
-      <p className="text-justify">
+      <p className="text-sm font-medium text-justify text-main">
         Nullam lacus est, tristique ac neque porta, ultrices mollis nisi. Vivamus nec blandit risus. Phasellus nec cursus dolor.
       </p>
       <Link className="text-white font-medium bg-main rounded-lg px-4 py-1" href="#">
