@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function Banner() {
   return (
-    <div className="relative w-full h-[calc(100vh-72px)] sm:h-[calc(100vh-80px)] flex justify-center items-center">
+    <section className="relative w-full h-[calc(100vh-72px)] sm:h-[calc(100vh-80px)] flex justify-center items-center">
       <div className="absolute w-full h-full bg-main opacity-90" />
       <video autoPlay muted loop className="w-full h-full object-cover">
         <source src="rome.mp4" type="video/mp4" />
@@ -30,9 +30,9 @@ export function Banner() {
           />
         </div>
       </div>
-      <Link href="/#about-us" className="absolute bottom-8 z-10">
+      <Link href="/#about-us" className="absolute bottom-0 md:bottom-8 z-10">
         <MdOutlineExpandMore className="w-16 h-16 text-white" />
       </Link>
-    </div>
+    </section>
   )
 }
