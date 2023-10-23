@@ -31,7 +31,7 @@ export function OurTeam() {
 
         <div className="max-w-4xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {members.map((member) => (
-            <Member member={member} />
+            <Member key={member.name} member={member} />
           ))}
         </div>
       </div>
