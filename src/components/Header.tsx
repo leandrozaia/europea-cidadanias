@@ -9,7 +9,7 @@ export function Header() {
   return (
     <header className="w-full bg-main fixed z-50 top-0">
       <div className="max-w-7xl mx-auto py-6 relative flex justify-end px-4 xl:px-0">
-        <div className="w-36 sm:w-48 h-24 sm:h-28 rounded-b-3xl bg-white top-0 left-4 xl:left-0 absolute z-10 flex justify-center items-center p-4">
+        <div className="w-36 sm:w-48 h-24 sm:h-28 rounded-b-3xl bg-white top-0 left-4 xl:left-0 absolute z-10 flex justify-center items-center p-4 shadow-lg">
           <Image
             src="/logo_01.png"
             alt="Logotipo da Europea Cidadanias"
