@@ -1,10 +1,15 @@
 import Link from "next/link"
 import Image from "next/image"
-import { MdMenu } from "react-icons/md"
+import { MdMenu, MdCall, MdOutlineArticle, MdOutlineCategory, MdPeopleAlt } from "react-icons/md"
 import { useState } from "react"
+import { useRouter } from "next/router"
+import { translations } from "@/utils/translations"
+import { ToggleLanguage } from "@/components/ToggleLanguage"
 
 export function Header() {
   const [show, setShow] = useState(false)
+  const { locale, locales, asPath } = useRouter()
+  const { header } = translations[locale as string]
   
   return (
     <header className="w-full bg-main fixed z-50 top-0">
@@ -21,35 +26,65 @@ export function Header() {
             />
           </div>
         </Link>
-        <nav className="hidden sm:flex gap-8 items-center">
+        <nav className="hidden sm:flex gap-4 items-center">
           <Link className="text-white font-bold" href="/#about-us">
-            Sobre Nós
+            {header.aboutUs}
           </Link>
           <Link className="text-white font-bold" href="/#services">
-            Serviços
+            {header.services}
           </Link>
           <Link className="text-white font-bold" href="/blog">
-            Blog
+            {header.blog}
           </Link>
           <Link className="text-main font-medium bg-white rounded-3xl px-4 py-1" href="/#footer">
-            Contato
+            {header.contact}
           </Link>
+          <ToggleLanguage />
         </nav>
         <MdMenu onClick={() => setShow(prev => !prev)} className="flex sm:hidden w-6 h-6 text-white" />
       </div>
       {show && <nav className="flex flex-col sm:hidden bg-white">
-        <Link className="text-white bg-main opacity-75 font-medium p-8" href="#">
-          Serviços
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white font-medium p-6" href="/#about-us">
+          <MdPeopleAlt className="w-10 h-10 p-2" />
+          {header.aboutUs}
         </Link>
-        <Link className="text-main bg-white font-medium p-8" href="#">
-          Sobre Nós
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white font-medium p-6" href="/#services">
+          <MdOutlineCategory className="w-10 h-10 p-2" />
+          {header.services}
         </Link>
-        <Link className="text-main bg-white font-medium p-8" href="#">
-          Blog
+        <Link className="flex items-center gap-4 text-main bg-white font-medium p-6" href="/blog">
+          <MdOutlineArticle className="w-10 h-10 p-2" />
+          {header.blog}
         </Link>
-        <Link className="text-main bg-white font-medium p-8" href="#">
-          Contato
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white font-medium p-6" href="/#footer">
+          <MdCall className="w-10 h-10 p-2" />
+          {header.contact}
         </Link>
+        {locales?.filter((l) => l !== locale).map((l) => (
+          <Link
+            key={l}
+            href={asPath}
+            locale={l}
+            className="flex items-center gap-4 text-main bg-white font-medium p-6"
+            role="menuitem"
+          >
+            <Image
+              aria-label={`Escolher o idioma ${l}`}
+              src={`/icon_${l}.png`}
+              alt=''
+              width={0}
+              height={0}
+              sizes='100vw'
+              className='w-10 h-10'
+            />
+            <p>
+              {l === "pt" ? "Português" : 
+                l === "en" ? "English" : 
+                  l === "es" ? "Español" : 
+                    l === "it" ? "Italiano" : ""}
+            </p>
+          </Link>
+        ))}
       </nav>}
     </header>
   )
