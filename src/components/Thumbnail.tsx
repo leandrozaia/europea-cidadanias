@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export function Thumbnail() {
   return (
-    <Link href={`#`} >
+    <Link href={`/blog/1`} >
       <article className="flex flex-col gap-2">
         <Image
           src="/bg_01.jpg"
