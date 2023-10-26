@@ -3,7 +3,7 @@ import { BsFacebook, BsInstagram, BsWhatsapp, BsLinkedin } from 'react-icons/bs'
 
 export function Footer() {
   return (
-    <footer className="bg-second">
+    <footer id="footer" className="bg-second">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 py-12 px-4 lg:px-0">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.7160965329144!2d-46.62145682383123!3d-23.578637862228728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59624b0c2a91%3A0x3c641c0d0eaa0b5f!2sR.%20Cel.%20Diogo%2C%20946%20-%20Jardim%20da%20Gloria%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001545-001!5e0!3m2!1spt-BR!2sbr!4v1693947884101!5m2!1spt-BR!2sbr"

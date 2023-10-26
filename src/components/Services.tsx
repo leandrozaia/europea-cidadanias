@@ -34,7 +34,7 @@ export function Services() {
   }
 
   return (
-    <section className="relative w-full flex justify-center">
+    <section id="services" className="relative w-full flex justify-center">
       <Image
         src="/bg_01.jpg"
         alt=""
