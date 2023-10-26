@@ -3,6 +3,7 @@ import { Banner } from '@/components/Banner'
 import { AboutUs } from '@/components/AboutUs'
 import { Services } from '@/components/Services'
 import { OurTeam } from '@/components/OurTeam'
+import { FAQ } from '@/components/FAQ'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <AboutUs />
         <Services />
         <OurTeam />
+        <FAQ />
       </div>
     </>
   )
