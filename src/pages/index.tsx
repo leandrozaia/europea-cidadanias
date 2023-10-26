@@ -6,6 +6,7 @@ import { OurTeam } from '@/components/OurTeam'
 import { FAQ } from '@/components/FAQ'
 import { Footer } from '@/components/Footer'
 import { Testimonials } from '@/components/Testimonials'
+import { OurBlog } from '@/components/OurBlog'
 
 export default function Home() {
   const testimonials = [
@@ -60,6 +61,7 @@ export default function Home() {
         <Services />
         <OurTeam />
         <Testimonials testimonials={testimonials} />
+        <OurBlog />
         <FAQ />
         <Footer />
       </div>
