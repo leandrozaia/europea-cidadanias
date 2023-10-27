@@ -8,7 +8,12 @@ import { Footer } from '@/components/Footer'
 import { Testimonials } from '@/components/Testimonials'
 import { OurBlog } from '@/components/OurBlog'
 
-export default function Home() {
+import { getBanner } from '@/utils/getBanner'
+
+export default function Home({ data }: any) {
+  if (!data) return
+  const { banner } = JSON.parse(data)
+
   const testimonials = [
     {
       name: "José",
@@ -56,7 +61,7 @@ export default function Home() {
     <>
       <Header />
       <div className="relative top-[72px] sm:top-[80px]">
-        <Banner />
+        <Banner banner={banner} />
         <AboutUs />
         <Services />
         <OurTeam />
@@ -67,4 +72,16 @@ export default function Home() {
       </div>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const { banner } = await getBanner()
+  
+  return {
+    props: {
+      data: JSON.stringify({
+        banner
+      }) || null
+    }
+  }
 }
