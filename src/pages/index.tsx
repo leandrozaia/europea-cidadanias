@@ -8,15 +8,15 @@ import { Footer } from '@/components/Footer'
 import { Testimonials } from '@/components/Testimonials'
 import { OurBlog } from '@/components/OurBlog'
 
-import { getBanner } from '@/utils/getBanner'
+// import { getBanner } from '@/utils/getBanner'
 // import { getAboutUs } from '@/utils/getAboutUs'
 
-export default function Home({ data }: any) {
-  if (!data) return
-  const {
-    banner,
-    // aboutUs
-  } = JSON.parse(data)
+export default function Home() {
+  // if (!data) return
+  // const {
+  //   banner,
+  //   aboutUs
+  // } = JSON.parse(data)
 
   const testimonials = [
     {
@@ -65,8 +65,8 @@ export default function Home({ data }: any) {
     <>
       <Header />
       <div className="relative top-[72px] sm:top-[80px]">
-        <Banner banner={banner} />
-        {/* <AboutUs aboutUs={aboutUs} /> */}
+        {/* <Banner banner={banner} />
+        <AboutUs aboutUs={aboutUs} /> */}
         <Services />
         <OurTeam />
         <Testimonials testimonials={testimonials} />
@@ -78,16 +78,16 @@ export default function Home({ data }: any) {
   )
 }
 
-export async function getStaticProps() {
-  const { banner } = await getBanner()
-  // const { aboutUs } = await getAboutUs()
+// export async function getStaticProps() {
+//   const { banner } = await getBanner()
+//   const { aboutUs } = await getAboutUs()
   
-  return {
-    props: {
-      data: JSON.stringify({
-        banner,
-        // aboutUs
-      }) || null
-    }
-  }
-}
+//   return {
+//     props: {
+//       data: JSON.stringify({
+//         banner,
+//         aboutUs
+//       }) || null
+//     }
+//   }
+// }
