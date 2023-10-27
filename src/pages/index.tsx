@@ -61,11 +61,12 @@ export default function Home({ data }: any) {
     }
   ]
 
+  console.log(banner)
   return (
     <>
       <Header />
       <div className="relative top-[72px] sm:top-[80px]">
-        <Banner banner={banner} />
+        {/* <Banner banner={banner} /> */}
         {/* <AboutUs aboutUs={aboutUs} /> */}
         <Services />
         <OurTeam />
