@@ -12,6 +12,7 @@ import { getBanner } from '@/utils/getBanner'
 import { getAboutUs } from '@/utils/getAboutUs'
 import { getServices } from '@/utils/getServices'
 import { getMembers } from '@/utils/getMembers'
+import { getTestimonials } from '@/utils/getTestimonials'
 
 export default function Home({ data }: any) {
   if (!data) return
@@ -19,51 +20,9 @@ export default function Home({ data }: any) {
     banner,
     aboutUs,
     services,
-    members
+    members,
+    testimonials
   } = JSON.parse(data)
-
-  const testimonials = [
-    {
-      name: "José",
-      star: 5,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet odio ligula. Pellentesque sit amet mollis eros. Cras eget eros convallis, tincidunt nulla ut, porta ligula.",
-    },
-    {
-      name: "José",
-      star: 5,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet odio ligula. Pellentesque sit amet mollis eros. Cras eget eros convallis, tincidunt nulla ut, porta ligula.",
-    },
-    {
-      name: "José",
-      star: 5,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet odio ligula. Pellentesque sit amet mollis eros. Cras eget eros convallis, tincidunt nulla ut, porta ligula.",
-    },
-    {
-      name: "José",
-      star: 5,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet odio ligula. Pellentesque sit amet mollis eros. Cras eget eros convallis, tincidunt nulla ut, porta ligula.",
-    },
-    {
-      name: "José",
-      star: 5,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet odio ligula. Pellentesque sit amet mollis eros. Cras eget eros convallis, tincidunt nulla ut, porta ligula.",
-    },
-    {
-      name: "José",
-      star: 5,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet odio ligula. Pellentesque sit amet mollis eros. Cras eget eros convallis, tincidunt nulla ut, porta ligula.",
-    },
-    {
-      name: "José",
-      star: 5,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet odio ligula. Pellentesque sit amet mollis eros. Cras eget eros convallis, tincidunt nulla ut, porta ligula.",
-    },
-    {
-      name: "José",
-      star: 5,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet odio ligula. Pellentesque sit amet mollis eros. Cras eget eros convallis, tincidunt nulla ut, porta ligula.",
-    }
-  ]
 
   return (
     <>
@@ -87,6 +46,7 @@ export async function getStaticProps() {
   const { aboutUs } = await getAboutUs()
   const { services } = await getServices()
   const { members } = await getMembers()
+  const { testimonials } = await getTestimonials()
   
   return {
     props: {
@@ -94,7 +54,8 @@ export async function getStaticProps() {
         banner,
         aboutUs,
         services,
-        members
+        members,
+        testimonials
       }) || null
     }
   }

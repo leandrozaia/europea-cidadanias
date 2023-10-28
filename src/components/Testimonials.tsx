@@ -8,8 +8,11 @@ import { Testimonial } from "@/components/Testimonial"
 
 interface Testimonial {
   name: string
-  star: number
-  description: string
+  stars: number
+  descriptionPt: string
+  descriptionEn: string
+  descriptionEs: string
+  descriptionIt: string
   image?: {
     url: string
   }

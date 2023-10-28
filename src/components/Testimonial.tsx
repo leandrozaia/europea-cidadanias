@@ -3,8 +3,11 @@ import { BsFillStarFill, BsPersonCircle } from "react-icons/bs"
 
 interface Testimonial {
   name: string
-  star: number
-  description: string
+  stars: number
+  descriptionPt: string
+  descriptionEn: string
+  descriptionEs: string
+  descriptionIt: string
   image?: {
     url: string
   }
@@ -17,7 +20,7 @@ interface Props {
 export function Testimonial({ testimonial }: Props) {
   function handleStars() {
     const stars: any = []
-    for(let i = 0; i < testimonial.star; i++) {
+    for(let i = 0; i < testimonial.stars; i++) {
       stars.push(
         <BsFillStarFill
           key={i}
@@ -49,7 +52,7 @@ export function Testimonial({ testimonial }: Props) {
       </div>
 
       <p className="text-justify">
-        {testimonial.description}
+        {testimonial.descriptionPt}
       </p>
 
       <div className="flex gap-2">
