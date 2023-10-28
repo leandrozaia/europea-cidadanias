@@ -10,12 +10,14 @@ import { OurBlog } from '@/components/OurBlog'
 
 import { getBanner } from '@/utils/getBanner'
 import { getAboutUs } from '@/utils/getAboutUs'
+import { getServices } from '@/utils/getServices'
 
 export default function Home({ data }: any) {
   if (!data) return
   const {
     banner,
-    aboutUs
+    aboutUs,
+    services
   } = JSON.parse(data)
 
   const testimonials = [
@@ -67,7 +69,7 @@ export default function Home({ data }: any) {
       <div className="relative top-[72px] sm:top-[80px]">
         <Banner banner={banner} />
         <AboutUs aboutUs={aboutUs} />
-        <Services />
+        <Services services={services} />
         <OurTeam />
         <Testimonials testimonials={testimonials} />
         <OurBlog />
@@ -81,12 +83,14 @@ export default function Home({ data }: any) {
 export async function getStaticProps() {
   const { banner } = await getBanner()
   const { aboutUs } = await getAboutUs()
+  const { services } = await getServices()
   
   return {
     props: {
       data: JSON.stringify({
         banner,
-        aboutUs
+        aboutUs,
+        services
       }) || null
     }
   }

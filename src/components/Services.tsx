@@ -6,7 +6,24 @@ import Image from "next/image"
 import { Service } from "@/components/Service"
 import { CustomPrevArrow, CustomNextArrow } from "@/components/CarouselCustoms"
 
-export function Services() {
+interface Service {
+  iconSvg: string
+  namePt: string
+  nameEn: string
+  nameEs: string
+  nameIt: string
+  descriptionPt: string
+  descriptionEn: string
+  descriptionEs: string
+  descriptionIt: string
+  phone: number
+}
+
+interface Props {
+  services: Service[]
+}
+
+export function Services({ services }: Props) {
   const settings = {
     infinite: true,
     speed: 500,
@@ -50,19 +67,12 @@ export function Services() {
             Serviços
           </h2>
 
-          <Slider {...settings} className="max-w-3xl mx-auto mb-12">            
-            <div className="px-3">
-              <Service />
-            </div>
-            <div className="px-3">
-              <Service />
-            </div>
-            <div className="px-3">
-              <Service />
-            </div>
-            <div className="px-3">
-              <Service />
-            </div>
+          <Slider {...settings} className="max-w-3xl mx-auto mb-12">
+            {services.map(service => (
+              <div key={service.namePt} className="px-3">
+                <Service service={service} />
+              </div>
+            ))}
           </Slider>
 
           <Image
