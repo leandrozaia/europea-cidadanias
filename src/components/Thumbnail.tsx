@@ -1,12 +1,45 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export function Thumbnail() {
+interface PostProps {
+  titlePt: string
+  titleEn: string
+  titleEs: string
+  titleIt: string
+  bodyPt: {
+    raw: any
+  }
+  bodyEn: {
+    raw: any
+  }
+  bodyEs: {
+    raw: any
+  }
+  bodyIt: {
+    raw: any
+  }
+  authorName: string
+  authorPicture: {
+    url: string
+  }
+  coverPhoto: {
+    url: string
+  }
+  date: string
+  slug: string
+  tag: string
+}
+
+interface Props {
+  post: PostProps
+}
+
+export function Thumbnail({ post }: Props) {
   return (
     <Link href={`/blog/1`} >
       <article className="flex flex-col gap-2">
         <Image
-          src="/bg_01.jpg"
+          src={post?.coverPhoto.url}
           alt=""
           width={0}
           height={0}
@@ -14,14 +47,14 @@ export function Thumbnail() {
           className="w-full aspect-square rounded-2xl object-cover"
         />
         <p className="text-sm uppercase text-main font-bold">
-          Tema
+          {post?.tag}
         </p>
         <h2 className="font-bold text-gray-900 hover:text-main line-clamp-2">
-          Duis sit amet odio ligula. Pellentesque sit amet mollis eros. Cras eget eros convallis, tincidunt nulla ut, porta ligula.
+          {post?.titlePt}
         </h2>
         <div className="flex items-center gap-1">
           <Image
-            src="/leandro_picture.png"
+            src={post?.authorPicture.url}
             alt=""
             width={0}
             height={0}
@@ -29,7 +62,7 @@ export function Thumbnail() {
             className="w-6 h-6"
           />
           <p className="text-gray-900">
-            Leandro Zaia Filho
+            {post?.authorName}
           </p>
         </div>
       </article>
