@@ -47,7 +47,7 @@ export function FAQ({ faqs }: Props) {
         </div>
         <div className="w-full flex flex-col gap-6">
           {faqs.map(faq => (
-            <Acordeon faq={faq} />
+            <Acordeon key={faq.questionPt} faq={faq} />
           ))}
         </div>
       </div>
