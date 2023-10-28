@@ -6,18 +6,6 @@ interface PostProps {
   titleEn: string
   titleEs: string
   titleIt: string
-  bodyPt: {
-    raw: any
-  }
-  bodyEn: {
-    raw: any
-  }
-  bodyEs: {
-    raw: any
-  }
-  bodyIt: {
-    raw: any
-  }
   authorName: string
   authorPicture: {
     url: string
@@ -25,7 +13,6 @@ interface PostProps {
   coverPhoto: {
     url: string
   }
-  date: string
   slug: string
   tag: string
 }
@@ -36,7 +23,7 @@ interface Props {
 
 export function Thumbnail({ post }: Props) {
   return (
-    <Link href={`/blog/1`} >
+    <Link href={`/blog/${post.slug}`} >
       <article className="flex flex-col gap-2">
         <Image
           src={post?.coverPhoto.url}
