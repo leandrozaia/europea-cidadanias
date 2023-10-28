@@ -14,6 +14,7 @@ import { getServices } from '@/utils/getServices'
 import { getMembers } from '@/utils/getMembers'
 import { getTestimonials } from '@/utils/getTestimonials'
 import { getPosts } from '@/utils/getPosts'
+import { getFAQs } from '@/utils/getFAQs'
 
 export default function Home({ data }: any) {
   if (!data) return
@@ -23,7 +24,8 @@ export default function Home({ data }: any) {
     services,
     members,
     testimonials,
-    posts
+    posts,
+    faqs
   } = JSON.parse(data)
 
   return (
@@ -36,7 +38,7 @@ export default function Home({ data }: any) {
         <OurTeam members={members} />
         <Testimonials testimonials={testimonials} />
         <OurBlog posts={posts} />
-        <FAQ />
+        <FAQ faqs={faqs} />
         <Footer />
       </div>
     </>
@@ -50,6 +52,7 @@ export async function getStaticProps() {
   const { members } = await getMembers()
   const { testimonials } = await getTestimonials()
   const { posts } = await getPosts()
+  const { faqs } = await getFAQs()
   
   return {
     props: {
@@ -59,7 +62,8 @@ export async function getStaticProps() {
         services,
         members,
         testimonials,
-        posts
+        posts,
+        faqs
       }) || null
     }
   }

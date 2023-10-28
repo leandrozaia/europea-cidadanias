@@ -1,7 +1,22 @@
 import Image from "next/image"
 import { Acordeon } from "@/components/Accordeon"
 
-export function FAQ() {
+interface FAQProps {
+  questionPt: string
+  questionEn: string
+  questionEs: string
+  questionIt: string
+  answerPt: string
+  answerEn: string
+  answerEs: string
+  answerIt: string
+}
+
+interface Props {
+  faqs: FAQProps[]
+}
+
+export function FAQ({ faqs }: Props) {
   return (
     <section className="relative w-full flex justify-center">
       <Image
@@ -21,7 +36,9 @@ export function FAQ() {
           <p className="text-main">Ainda tem alguma dúvida?</p>
           <p className="text-main">Fale conosco pelo
             <a
-              href="#"
+              href={`https://api.whatsapp.com/send?phone=5511970746016`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-1 underline underline-offset-4"
             >
               WhatsApp
@@ -29,12 +46,9 @@ export function FAQ() {
           </p>
         </div>
         <div className="w-full flex flex-col gap-6">
-          <Acordeon title="Pergunta?" body="Resposta!" />
-          <Acordeon title="Pergunta?" body="Resposta!" />
-          <Acordeon title="Pergunta?" body="Resposta!" />
-          <Acordeon title="Pergunta?" body="Resposta!" />
-          <Acordeon title="Pergunta?" body="Resposta!" />
-          <Acordeon title="Pergunta?" body="Resposta!" />
+          {faqs.map(faq => (
+            <Acordeon faq={faq} />
+          ))}
         </div>
       </div>
     </section>
