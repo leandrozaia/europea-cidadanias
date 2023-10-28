@@ -4,10 +4,11 @@ import { Header } from "@/components/Header"
 import { RichText } from "@/components/RichText"
 import { Thumbnail } from "@/components/Thumbnail"
 import { getPostBySlug } from "@/utils/getPostBySlug"
+import { getFooter } from '@/utils/getFooter'
 
 export default function Post({ data }: any) {
   if (!data) return
-  const { post } = JSON.parse(data)
+  const { post, footer } = JSON.parse(data)
 
   return (
     <>
@@ -48,7 +49,7 @@ export default function Post({ data }: any) {
             ))}
           </div>
         </main>
-        <Footer />
+        <Footer footer={footer} />
       </div>
     </>
   )
@@ -65,11 +66,13 @@ export async function getStaticProps(context: any) {
   const { slug = '' } = context.params
 
   const { post } = await getPostBySlug(slug)
+  const { footer } = await getFooter()
 
   return {
     props: {
       data: JSON.stringify({
-        post
+        post,
+        footer
       }) || null
     }
   }

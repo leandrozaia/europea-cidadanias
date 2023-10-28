@@ -2,6 +2,7 @@ import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { Thumbnail } from "@/components/Thumbnail"
 import { getPosts } from '@/utils/getPosts'
+import { getFooter } from '@/utils/getFooter'
 
 interface PostProps {
   titlePt: string
@@ -34,9 +35,7 @@ interface PostProps {
 
 export default function Blog({ data }: any) {
   if (!data) return
-  const {
-    posts
-  } = JSON.parse(data)
+  const { posts, footer } = JSON.parse(data)
 
   return (
     <>
@@ -49,7 +48,7 @@ export default function Blog({ data }: any) {
             ))}
           </div>
         </main>
-        <Footer />
+        <Footer footer={footer} />
       </div>
     </>
   )
@@ -57,11 +56,13 @@ export default function Blog({ data }: any) {
 
 export async function getStaticProps() {
   const { posts } = await getPosts()
-  
+  const { footer } = await getFooter()
+
   return {
     props: {
       data: JSON.stringify({
-        posts
+        posts,
+        footer
       }) || null
     }
   }
