@@ -1,6 +1,7 @@
 import { MdOutlineExpandMore } from "react-icons/md"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 interface BannerProps {
   descriptionPt: string
@@ -21,6 +22,8 @@ interface Props {
 }
 
 export function Banner({ banner }: Props) {
+  const { locale } = useRouter()
+
   return (
     <section className="relative w-full h-[calc(100vh-72px)] sm:h-[calc(100vh-80px)] flex justify-center items-center">
       <div className="absolute w-full h-full bg-main opacity-90" />
@@ -30,10 +33,16 @@ export function Banner({ banner }: Props) {
       <div className="absolute flex max-w-[690px] gap-12 flex-col-reverse items-center md:flex-row px-4 md:px-0">
         <div>
           <h2 className="text-white font-bold text-2xl sm:text-4xl text-justify">
-            {banner?.headingPt}
+            {locale === "pt" ? banner?.headingPt : 
+              locale === "en" ? banner?.headingEn : 
+                locale === "es" ? banner?.headingEs : 
+                  locale === "it" ? banner?.headingIt : ""}
           </h2>
           <p className="text-white text-xs sm:text-sm mt-6 leading-5 sm:leading-6 text-justify">
-            {banner?.descriptionPt}
+            {locale === "pt" ? banner?.descriptionPt : 
+              locale === "en" ? banner?.descriptionEn : 
+                locale === "es" ? banner?.descriptionEs : 
+                  locale === "it" ? banner?.descriptionIt : ""}
           </p>
         </div>
         <div className="w-full md:w-1 h-[2px] md:h-[216px] bg-gradient-to-r md:bg-gradient-to-b from-main via-white to-main" />
