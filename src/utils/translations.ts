@@ -23,6 +23,11 @@ export const translations: any = {
     },
     ourBlog: {
       title: "Nosso Blog"
+    },
+    faq: {
+      title: "Tudo o que você precisa saber sobre a Europea Cidadanias",
+      p1: "Ainda tem alguma dúvida?",
+      p2: "Fale conosco pelo"
     }
   },
   en: {
@@ -49,6 +54,11 @@ export const translations: any = {
     },
     ourBlog: {
       title: "Our Blog"
+    },
+    faq: {
+      title: "Everything you need to know about Europea Cidadanias",
+      p1: "Still have any questions?",
+      p2: "Contact us at"
     }
   },
   es: {
@@ -75,6 +85,11 @@ export const translations: any = {
     },
     ourBlog: {
       title: "Nuestro blog"
+    },
+    faq: {
+      title: "Todo lo que necesitas saber sobre las Ciudadanías Europeas",
+      p1: "¿Aún tienes alguna pregunta?",
+      p2: "Contactanos en"
     }
   },
   it: {
@@ -101,6 +116,11 @@ export const translations: any = {
     },
     ourBlog: {
       title: "Il Nostro Blog"
+    },
+    faq: {
+      title: "Tutto quello che devi sapere sulla Cidadanias europea",
+      p1: "Hai ancora domande?",
+      p2: "Contattaci al"
     }
   },
 }

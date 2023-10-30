@@ -1,5 +1,7 @@
 import Image from "next/image"
 import { Acordeon } from "@/components/Accordeon"
+import { useRouter } from "next/router"
+import { translations } from "@/utils/translations"
 
 interface FAQProps {
   questionPt: string
@@ -17,6 +19,9 @@ interface Props {
 }
 
 export function FAQ({ faqs }: Props) {
+  const { locale } = useRouter()
+  const { faq } = translations[locale as string]
+
   return (
     <section className="relative w-full flex justify-center">
       <Image
@@ -31,10 +36,10 @@ export function FAQ({ faqs }: Props) {
       <div className="relative max-w-5xl w-full my-24 flex flex-col md:flex-row gap-12 px-4 lg:px-0">
         <div className="w-full">
           <h3 className="text-main text-3xl font-bold mb-4">
-            Tudo o que você precisa saber sobre a Europea Cidadanias
+            {faq.title}
           </h3>
-          <p className="text-main">Ainda tem alguma dúvida?</p>
-          <p className="text-main">Fale conosco pelo
+          <p className="text-main">{faq.p1}</p>
+          <p className="text-main">{faq.p2}
             <a
               href={`https://api.whatsapp.com/send?phone=5511970746016`}
               target="_blank"
