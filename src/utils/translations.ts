@@ -5,6 +5,9 @@ export const translations: any = {
       services: "Serviços",
       blog: "Blog",
       contact: "Contato"
+    },
+    about: {
+      title: "Sobre Nós",
     }
   },
   en: {
@@ -13,6 +16,9 @@ export const translations: any = {
       services: "Services",
       blog: "Blog",
       contact: "Contact"
+    },
+    about: {
+      title: "About Us",
     }
   },
   es: {
@@ -21,6 +27,9 @@ export const translations: any = {
       services: "Servicios",
       blog: "Blog",
       contact: "Contacto"
+    },
+    about: {
+      title: "Sobre Nosotros",
     }
   },
   it: {
@@ -29,6 +38,9 @@ export const translations: any = {
       services: "Servizi",
       blog: "Blog",
       contact: "Contatto"
+    },
+    about: {
+      title: "Chi Siamo",
     }
   },
 }
