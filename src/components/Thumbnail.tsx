@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 interface PostProps {
   titlePt: string
@@ -22,12 +23,14 @@ interface Props {
 }
 
 export function Thumbnail({ post }: Props) {
+  const { locale } = useRouter()
+
   return (
     <Link href={`/blog/${post.slug}`} >
       <article className="flex flex-col gap-2">
         <Image
           src={post?.coverPhoto.url}
-          alt=""
+          alt={`Imagem de capa do artigo ${post.titlePt}`}
           width={0}
           height={0}
           sizes="100vw"
@@ -37,12 +40,15 @@ export function Thumbnail({ post }: Props) {
           {post?.tag}
         </p>
         <h2 className="font-bold text-gray-900 hover:text-main line-clamp-2">
-          {post?.titlePt}
+          {locale === "pt" && post?.titlePt}
+          {locale === "en" && post?.titleEn}
+          {locale === "es" && post?.titleEs}
+          {locale === "it" && post?.titleIt}
         </h2>
         <div className="flex items-center gap-1">
           <Image
             src={post?.authorPicture.url}
-            alt=""
+            alt={`Foto de perfil de nosso sócio ${post.authorName}`}
             width={0}
             height={0}
             sizes="100vw"

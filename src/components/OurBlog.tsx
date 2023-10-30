@@ -1,4 +1,6 @@
 import { Thumbnail } from "@/components/Thumbnail"
+import { useRouter } from "next/router"
+import { translations } from "@/utils/translations"
 
 interface PostProps {
   titlePt: string
@@ -34,6 +36,9 @@ interface Props {
 }
 
 export function OurBlog({ posts }: Props) {
+  const { locale } = useRouter()
+  const { ourBlog } = translations[locale as string]
+
   const handlePosts = () => {
     const thumbnails: any = []
     for (let i = 0; i < 3; i++) {
@@ -48,7 +53,7 @@ export function OurBlog({ posts }: Props) {
     <section>
       <div className="max-w-5xl mx-auto py-24 px-4 xl:px-0">
         <h2 className="text-main text-4xl font-bold uppercase text-center mb-12">
-          Nosso Blog
+          {ourBlog.title}
         </h2>
 
         <div className="w-full flex flex-col md:flex-row gap-6">

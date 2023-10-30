@@ -20,6 +20,9 @@ export const translations: any = {
     },
     testimonial: {
       title: "Depoimentos"
+    },
+    ourBlog: {
+      title: "Nosso Blog"
     }
   },
   en: {
@@ -43,6 +46,9 @@ export const translations: any = {
     },
     testimonial: {
       title: "Testimonial"
+    },
+    ourBlog: {
+      title: "Our Blog"
     }
   },
   es: {
@@ -66,6 +72,9 @@ export const translations: any = {
     },
     testimonial: {
       title: "Deposiciones"
+    },
+    ourBlog: {
+      title: "Nuestro blog"
     }
   },
   it: {
@@ -89,6 +98,9 @@ export const translations: any = {
     },
     testimonial: {
       title: "Deposizioni"
+    },
+    ourBlog: {
+      title: "Il Nostro Blog"
     }
   },
 }
