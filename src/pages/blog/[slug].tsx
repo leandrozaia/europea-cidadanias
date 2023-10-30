@@ -9,11 +9,11 @@ import { useRouter } from "next/router"
 import { translations } from "@/utils/translations"
 
 export default function Post({ data }: any) {
-  if (!data) return
-  const { post, footer } = JSON.parse(data)
   const { locale } = useRouter()
   const { postPage } = translations[locale as string]
 
+  if (!data) return
+  const { post, footer } = JSON.parse(data)
 
   return (
     <>
