@@ -10,7 +10,7 @@ export function Header() {
   const [show, setShow] = useState(false)
   const { locale, locales, asPath } = useRouter()
   const { header } = translations[locale as string]
-  
+
   return (
     <header className="w-full bg-main fixed z-50 top-0">
       <div className="max-w-7xl mx-auto py-6 relative flex justify-end px-4 xl:px-0">
@@ -36,7 +36,7 @@ export function Header() {
           <Link className="text-white font-bold" href="/blog">
             {header.blog}
           </Link>
-          <Link className="text-main font-medium bg-white rounded-3xl px-4 py-1" href="/#footer">
+          <Link className="text-main font-medium bg-white rounded-3xl px-4 py-1" href={asPath === "/" ? "/#footer" : `${asPath}/#footer`}>
             {header.contact}
           </Link>
           <ToggleLanguage />
@@ -56,7 +56,7 @@ export function Header() {
           <MdOutlineArticle className="w-10 h-10 p-2" />
           {header.blog}
         </Link>
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white font-medium p-6" href="/#footer">
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white font-medium p-6" href={asPath === "/" ? "/#footer" : `${asPath}/#footer`}>
           <MdCall className="w-10 h-10 p-2" />
           {header.contact}
         </Link>

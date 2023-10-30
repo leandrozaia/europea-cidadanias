@@ -33,6 +33,9 @@ export const translations: any = {
       address: "Endereço",
       phone: "Telefone",
       email: "E-mail"
+    },
+    postPage: {
+      recommendedPosts: "Artigos Recomendados"
     }
   },
   en: {
@@ -69,6 +72,9 @@ export const translations: any = {
       address: "Address",
       phone: "Phone",
       email: "Email"
+    },
+    postPage: {
+      recommendedPosts: "Recommended Articles"
     }
   },
   es: {
@@ -105,6 +111,9 @@ export const translations: any = {
       address: "Dirección",
       phone: "Teléfono",
       email: "Correo Electrónico"
+    },
+    postPage: {
+      recommendedPosts: "Artículos recomendados"
     }
   },
   it: {
@@ -141,6 +150,9 @@ export const translations: any = {
       address: "Indirizzo",
       phone: "Telefono",
       email: "E-mail"
+    },
+    postPage: {
+      recommendedPosts: "Articoli consigliati"
     }
   },
 }

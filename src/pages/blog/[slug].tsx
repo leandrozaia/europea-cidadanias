@@ -5,10 +5,15 @@ import { RichText } from "@/components/RichText"
 import { Thumbnail } from "@/components/Thumbnail"
 import { getPostBySlug } from "@/utils/getPostBySlug"
 import { getFooter } from '@/utils/getFooter'
+import { useRouter } from "next/router"
+import { translations } from "@/utils/translations"
 
 export default function Post({ data }: any) {
   if (!data) return
   const { post, footer } = JSON.parse(data)
+  const { locale } = useRouter()
+  const { postPage } = translations[locale as string]
+
 
   return (
     <>
@@ -27,21 +32,27 @@ export default function Post({ data }: any) {
             </p>
           </div>
           <h2 className="text-gray-900 font-bold text-2xl mt-6">
-            {post.titlePt}
+            {locale === "pt" && post.titlePt}
+            {locale === "en" && post.titleEn}
+            {locale === "es" && post.titleEs}
+            {locale === "it" && post.titleIt}
           </h2>
           <Image
             src={post.coverPhoto.url}
-            alt=""
+            alt={`Imagem de capa do artigo ${post.titlePt}`}
             width={0}
             height={0}
             sizes="100vw"
             className="w-full h-[512px] rounded-2xl object-cover mt-6"
           />
           <article className="prose prose-headings:text-start text-justify prose-base sm:prose-lg md:prose-xl mt-6">
-            <RichText content={post.bodyPt.raw} />
+            {locale === "pt" && <RichText content={post.bodyPt.raw} />}
+            {locale === "en" && <RichText content={post.bodyEn.raw} />}
+            {locale === "es" && <RichText content={post.bodyEs.raw} />}
+            {locale === "it" && <RichText content={post.bodyIt.raw} />}
           </article>
           <h3 className="text-4xl font-bold mt-16 mb-12">
-            Artigos Recomendados
+            {postPage.recommendedPosts}
           </h3>
           <div className="w-full flex flex-col md:flex-row gap-6">
             {post.related.map((r: any) => (
