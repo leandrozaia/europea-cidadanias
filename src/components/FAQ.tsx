@@ -49,10 +49,25 @@ export function FAQ({ faqs }: Props) {
               WhatsApp
             </a>
           </p>
+          <Image
+            src="/leandro.png"
+            alt="Image de nosso sócio Leandro Zaia Filho"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full aspect-square object-contain"
+          />
         </div>
         <div className="w-full flex flex-col gap-6">
           {faqs.map(faq => (
-            <Acordeon key={faq.questionPt} faq={faq} />
+            <div key={faq.questionPt} className="flex flex-col gap-6">
+              <Acordeon faq={faq} />
+              <Acordeon faq={faq} />
+              <Acordeon faq={faq} />
+              <Acordeon faq={faq} />
+              <Acordeon faq={faq} />
+              <Acordeon faq={faq} />
+            </div>
           ))}
         </div>
       </div>
