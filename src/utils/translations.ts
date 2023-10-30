@@ -17,6 +17,9 @@ export const translations: any = {
     },
     ourTeam: {
       title: "Nosso Time",
+    },
+    testimonial: {
+      title: "Depoimentos"
     }
   },
   en: {
@@ -37,6 +40,9 @@ export const translations: any = {
     },
     ourTeam: {
       title: "Our Team",
+    },
+    testimonial: {
+      title: "Testimonial"
     }
   },
   es: {
@@ -57,6 +63,9 @@ export const translations: any = {
     },
     ourTeam: {
       title: "Nuestro Equipo",
+    },
+    testimonial: {
+      title: "Deposiciones"
     }
   },
   it: {
@@ -77,6 +86,9 @@ export const translations: any = {
     },
     ourTeam: {
       title: "La Nostra Squadra",
+    },
+    testimonial: {
+      title: "Deposizioni"
     }
   },
 }

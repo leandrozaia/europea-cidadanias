@@ -3,6 +3,8 @@ import Image from "next/image"
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { useRouter } from "next/router"
+import { translations } from "@/utils/translations"
 
 import { Testimonial } from "@/components/Testimonial"
 
@@ -23,6 +25,9 @@ interface Props {
 }
 
 export function Testimonials({ testimonials }: Props) {
+  const { locale } = useRouter()
+  const { testimonial } = translations[locale as string]
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -48,7 +53,7 @@ export function Testimonials({ testimonials }: Props) {
     <section className="relative w-full flex justify-center">
       <Image
         src="/bg_02.png"
-        alt=""
+        alt="Imagem de Portugal"
         width={0}
         height={0}
         sizes="100vw"
@@ -57,7 +62,7 @@ export function Testimonials({ testimonials }: Props) {
       <div className="absolute w-full h-full bg-second opacity-90" />
       <div className="relative max-w-5xl w-full my-24 px-4 lg:px-0">
         <h2 className="text-white text-4xl font-bold uppercase text-center mb-12">
-          Depoimentos
+          {testimonial.title}
         </h2>
 
         <Slider {...settings} className="mt-12 px-4 xl:px-0">            

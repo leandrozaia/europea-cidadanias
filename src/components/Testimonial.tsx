@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { BsFillStarFill, BsPersonCircle } from "react-icons/bs"
+import { useRouter } from "next/router"
 
 interface Testimonial {
   name: string
@@ -18,6 +19,8 @@ interface Props {
 }
 
 export function Testimonial({ testimonial }: Props) {
+  const { locale } = useRouter()
+
   function handleStars() {
     const stars: any = []
     for(let i = 0; i < testimonial.stars; i++) {
@@ -37,7 +40,7 @@ export function Testimonial({ testimonial }: Props) {
         {testimonial.image?.url ? (
           <Image
             src={testimonial.image?.url}
-            alt=""
+            alt={`Foto de perfil do Cliente ${testimonial.name}`}
             width={0}
             height={0}
             sizes="100vw"
@@ -52,7 +55,10 @@ export function Testimonial({ testimonial }: Props) {
       </div>
 
       <p className="text-justify">
-        {testimonial.descriptionPt}
+        {locale === "pt" && testimonial.descriptionPt}
+        {locale === "en" && testimonial.descriptionEn}
+        {locale === "es" && testimonial.descriptionEs}
+        {locale === "it" && testimonial.descriptionIt}
       </p>
 
       <div className="flex gap-2">
