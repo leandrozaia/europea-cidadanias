@@ -16,7 +16,7 @@ interface Props {
 
 export function AboutUs({ aboutUs }: Props) {
   const { locale } = useRouter()
-  const { about } = translations[locale as string]
+  const { about, generic } = translations[locale as string]
 
   return (
     <section id="about-us">
@@ -53,12 +53,12 @@ export function AboutUs({ aboutUs }: Props) {
               rel="noopener noreferrer"
               className="text-main font-medium bg-white rounded-lg px-4 py-1"
             >
-              {about.title}
+              {generic.n1}
             </a>
           </div>
           <Image
             src="/cassia.png"
-            alt="Imagem de nossa sócias Cássia Mesquita"
+            alt="Imagem de nossa sócia Cássia Mesquita"
             width={0}
             height={0}
             sizes="100vw"

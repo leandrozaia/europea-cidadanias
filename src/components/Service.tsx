@@ -1,4 +1,6 @@
 import { CMSIcon } from "@/components/CMSIcon"
+import { useRouter } from "next/router"
+import { translations } from "@/utils/translations"
 
 interface Service {
   iconSvg: string
@@ -18,14 +20,23 @@ interface Props {
 }
 
 export function Service({ service }: Props) {
+  const { locale } = useRouter()
+  const { generic } = translations[locale as string]
+
   return (
     <div className="w-full bg-white rounded-2xl p-6 flex flex-col items-center gap-6">
       <CMSIcon icon={service.iconSvg} />
       <h3 className="text-main text-lg font-bold text-center">
-        {service.namePt}
+        {locale === "pt" && service.namePt}
+        {locale === "en" && service.nameEn}
+        {locale === "es" && service.nameEs}
+        {locale === "it" && service.nameIt}
       </h3>
       <p className="text-sm font-medium text-justify text-main">
-        {service.descriptionPt}
+        {locale === "pt" && service.descriptionPt}
+        {locale === "en" && service.descriptionEn}
+        {locale === "es" && service.descriptionEs}
+        {locale === "it" && service.descriptionIt}
       </p>
       <a
         href={`https://api.whatsapp.com/send?phone=${service.phone}`}
@@ -33,7 +44,7 @@ export function Service({ service }: Props) {
         rel="noopener noreferrer"
         className="text-white font-medium bg-main rounded-lg px-4 py-1"
       >
-        Saiba Mais
+        {generic.n1}
       </a>
     </div>
   )

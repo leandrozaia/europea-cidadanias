@@ -5,6 +5,8 @@ import 'slick-carousel/slick/slick-theme.css'
 import Image from "next/image"
 import { Service } from "@/components/Service"
 import { CustomPrevArrow, CustomNextArrow } from "@/components/CarouselCustoms"
+import { useRouter } from "next/router"
+import { translations } from "@/utils/translations"
 
 interface Service {
   iconSvg: string
@@ -24,6 +26,8 @@ interface Props {
 }
 
 export function Services({ services }: Props) {
+  const { locale } = useRouter()
+  const { servicesSection } = translations[locale as string]
   const settings = {
     infinite: true,
     speed: 500,
@@ -54,7 +58,7 @@ export function Services({ services }: Props) {
     <section id="services" className="relative w-full flex justify-center">
       <Image
         src="/bg_01.jpg"
-        alt=""
+        alt="Imagem de Portugal"
         width={0}
         height={0}
         sizes="100vw"
@@ -64,7 +68,7 @@ export function Services({ services }: Props) {
       <div className="relative max-w-5xl w-full mt-24 flex flex-col">
         <div className="border-x-8 border-t-8 rounded-t-[64px] mx-4 lg:mx-0 overflow-x-hidden">
           <h2 className="text-white text-4xl font-bold uppercase text-center my-12">
-            Serviços
+            {servicesSection.title}
           </h2>
 
           <Slider {...settings} className="max-w-3xl mx-auto mb-12">
@@ -77,7 +81,7 @@ export function Services({ services }: Props) {
 
           <Image
             src="/mateus.png"
-            alt=""
+            alt="Imagem do nosso sócio Mateus Dallabrida"
             width={0}
             height={0}
             sizes="100vw"
