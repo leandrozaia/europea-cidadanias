@@ -1,5 +1,7 @@
 import { MdLocationOn, MdPhone, MdAttachEmail } from "react-icons/md"
 import { BsFacebook, BsInstagram, BsWhatsapp, BsLinkedin } from 'react-icons/bs'
+import { useRouter } from "next/router"
+import { translations } from "@/utils/translations"
 
 interface FooterProps {
   iframe: string
@@ -17,6 +19,9 @@ interface Props {
 }
 
 export function Footer({ footer }: Props) {
+  const { locale } = useRouter()
+  const { footerSection } = translations[locale as string]
+
   return (
     <footer id="footer" className="bg-second">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 py-12 px-4 lg:px-0">
@@ -29,21 +34,21 @@ export function Footer({ footer }: Props) {
         />
         <div className="w-full my-auto">
           <h3 className="text-3xl text-white font-bold mb-4">
-            Endereço
+            {footerSection.address}
           </h3>
           <p className="flex gap-2 items-center text-white mb-8">
             <MdLocationOn className="w-5 h-5" />
             {footer.address}
           </p>
           <h3 className="text-3xl text-white font-bold mb-4">
-            Telefone
+            {footerSection.phone}
           </h3>
           <p className="flex gap-2 items-center text-white mb-8">
             <MdPhone className="w-5 h-5" />
             {footer.phone}
           </p>
           <h3 className="text-3xl text-white font-bold mb-4">
-            E-mail
+            {footerSection.email}
           </h3>
           <p className="flex gap-2 items-center text-white mb-8">
             <MdAttachEmail className="w-5 h-5" />
