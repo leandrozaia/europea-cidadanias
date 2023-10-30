@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa"
+import { useRouter } from "next/router"
 
 interface MemberProps {
   profilePicture: {
@@ -25,6 +26,8 @@ interface Props {
 }
 
 export function Member({ member }: Props) {
+  const { locale } = useRouter()
+
   return (
     <div className="w-full bg-main rounded-2xl p-6 flex flex-col items-center gap-4">
       <Image
@@ -40,11 +43,17 @@ export function Member({ member }: Props) {
           {member.name}
         </h3>
         <p className="text-sm text-white">
-          {member.captionPt}
+          {locale === "pt" && member.captionPt}
+          {locale === "en" && member.captionEn}
+          {locale === "es" && member.captionEs}
+          {locale === "it" && member.captionIt}
         </p>
       </div>
       <p className="text-sm text-white text-justify">
-        {member.descriptionPt}
+        {locale === "pt" && member.descriptionPt}
+        {locale === "en" && member.descriptionEn}
+        {locale === "es" && member.descriptionEs}
+        {locale === "it" && member.descriptionIt}
       </p>
       <div className="flex gap-5 justify-center">
         {member.facebookUrl && (

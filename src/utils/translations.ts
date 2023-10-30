@@ -14,6 +14,9 @@ export const translations: any = {
     },
     servicesSection: {
       title: "Serviços",
+    },
+    ourTeam: {
+      title: "Nosso Time",
     }
   },
   en: {
@@ -31,6 +34,9 @@ export const translations: any = {
     },
     servicesSection: {
       title: "Services",
+    },
+    ourTeam: {
+      title: "Our Team",
     }
   },
   es: {
@@ -48,6 +54,9 @@ export const translations: any = {
     },
     servicesSection: {
       title: "Servicios",
+    },
+    ourTeam: {
+      title: "Nuestro Equipo",
     }
   },
   it: {
@@ -65,6 +74,9 @@ export const translations: any = {
     },
     servicesSection: {
       title: "Servizi",
+    },
+    ourTeam: {
+      title: "La Nostra Squadra",
     }
   },
 }
