@@ -7,6 +7,7 @@ import { FAQ } from '@/components/FAQ'
 import { Footer } from '@/components/Footer'
 import { Testimonials } from '@/components/Testimonials'
 import { OurBlog } from '@/components/OurBlog'
+import { ContactForm } from '@/components/ContactForm'
 
 import { getBanner } from '@/utils/getBanner'
 import { getAboutUs } from '@/utils/getAboutUs'
@@ -40,6 +41,7 @@ export default function Home({ data }: any) {
         <OurTeam members={members} />
         <Testimonials testimonials={testimonials} />
         <OurBlog posts={posts} />
+        <ContactForm footer={footer} />
         <FAQ faqs={faqs} />
         <Footer footer={footer} />
       </div>

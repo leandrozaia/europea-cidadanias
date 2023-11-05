@@ -36,6 +36,13 @@ export const translations: any = {
     },
     postPage: {
       recommendedPosts: "Artigos Recomendados"
+    },
+    contactForm: {
+      title: "Entre em Contato",
+      name: "Digite seu nome",
+      email: "Digite seu e-mail",
+      message: "Digite sua mensagem",
+      button: "Enviar Mensagem"
     }
   },
   en: {
@@ -75,6 +82,13 @@ export const translations: any = {
     },
     postPage: {
       recommendedPosts: "Recommended Articles"
+    },
+    contactForm: {
+      title: "Contact",
+      name: "Type your name",
+      email: "Type your e-mail",
+      message: "Type your message",
+      button: "Send Message"
     }
   },
   es: {
@@ -114,6 +128,13 @@ export const translations: any = {
     },
     postPage: {
       recommendedPosts: "Artículos recomendados"
+    },
+    contactForm: {
+      title: "Entre en contacto",
+      name: "Escriba su nombre",
+      email: "Escribe tu correo electrónico",
+      message: "Escribe tu mensaje",
+      button: "Enviar mensaje"
     }
   },
   it: {
@@ -153,6 +174,13 @@ export const translations: any = {
     },
     postPage: {
       recommendedPosts: "Articoli consigliati"
+    },
+    contactForm: {
+      title: "Contatto",
+      name: "Scrivi il tuo nome",
+      email: "Digita la tua email",
+      message: "Digita il tuo messaggio",
+      button: "Invia messaggio"
     }
   },
 }
