@@ -26,11 +26,11 @@ export function Banner({ banner }: Props) {
 
   return (
     <section className="relative w-full h-[calc(100vh-72px)] sm:h-[calc(100vh-80px)] flex justify-center items-center">
-      <video preload="auto" playsInline autoPlay muted loop className="w-full h-full object-cover">
+      <video preload="auto" playsInline autoPlay muted loop className="w-full h-[132%] -z-10 object-cover">
         <source src={banner?.video.url} type="video/mp4" />
       </video>
       <div className="absolute w-full h-full bg-main opacity-80" />
-      <div className="absolute flex max-w-[690px] gap-12 flex-col-reverse items-center md:flex-row px-4 md:px-0">
+      <div className="absolute flex max-w-[690px] gap-8 md:gap-12 flex-col-reverse items-center md:flex-row px-4 md:px-0">
         <div>
           <h2 className="text-white font-bold text-2xl sm:text-4xl text-center md:text-justify">
             {locale === "pt" ? banner?.headingPt : 
@@ -38,7 +38,7 @@ export function Banner({ banner }: Props) {
                 locale === "es" ? banner?.headingEs : 
                   locale === "it" ? banner?.headingIt : ""}
           </h2>
-          <p className="text-white text-sm mt-6 leading-5 sm:leading-6 text-center md:text-justify">
+          <p className="text-white text-sm mt-4 md:mt-6 leading-5 sm:leading-6 text-center md:text-justify">
             {locale === "pt" ? banner?.descriptionPt : 
               locale === "en" ? banner?.descriptionEn : 
                 locale === "es" ? banner?.descriptionEs : 

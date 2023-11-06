@@ -19,7 +19,7 @@ export function AboutUs({ aboutUs }: Props) {
   const { about, generic } = translations[locale as string]
 
   return (
-    <section id="about-us">
+    <section id="about-us" className="bg-white">
       <div className="max-w-5xl mx-auto py-12 px-4 md:px-12 xl:px-0">
         <h2 className="text-main text-4xl font-bold uppercase text-center mb-12">
           {about.title}
