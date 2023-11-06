@@ -65,7 +65,7 @@ export function ContactForm({ footer }: Props) {
           {contactForm.title}
         </h2>
 
-        <div className="grid md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="w-full">
             <h3 className="text-3xl text-white font-bold mb-4">
               {footerSection.address}
@@ -91,7 +91,7 @@ export function ContactForm({ footer }: Props) {
           </div>
 
           <form
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-4 w-full"
             onSubmit={handleSubmit(onSubmit)}
           >
             <input

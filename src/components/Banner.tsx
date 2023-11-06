@@ -29,6 +29,7 @@ export function Banner({ banner }: Props) {
       <video preload="auto" playsInline autoPlay muted loop className="w-full h-full object-cover">
         <source src={banner?.video.url} type="video/mp4" />
       </video>
+      <div className="absolute w-full h-full bg-main opacity-90" />
       <div className="absolute flex max-w-[690px] gap-12 flex-col-reverse items-center md:flex-row px-4 md:px-0">
         <div>
           <h2 className="text-white font-bold text-2xl sm:text-4xl text-justify">
