@@ -29,23 +29,23 @@ export function Banner({ banner }: Props) {
       <video preload="auto" playsInline autoPlay muted loop className="w-full h-full object-cover">
         <source src={banner?.video.url} type="video/mp4" />
       </video>
-      <div className="absolute w-full h-full bg-main opacity-90" />
+      <div className="absolute w-full h-full bg-main opacity-80" />
       <div className="absolute flex max-w-[690px] gap-12 flex-col-reverse items-center md:flex-row px-4 md:px-0">
         <div>
-          <h2 className="text-white font-bold text-2xl sm:text-4xl text-justify">
+          <h2 className="text-white font-bold text-2xl sm:text-4xl text-center md:text-justify">
             {locale === "pt" ? banner?.headingPt : 
               locale === "en" ? banner?.headingEn : 
                 locale === "es" ? banner?.headingEs : 
                   locale === "it" ? banner?.headingIt : ""}
           </h2>
-          <p className="text-white font-medium text-xs sm:text-sm mt-6 leading-5 sm:leading-6 text-justify">
+          <p className="text-white text-sm mt-6 leading-5 sm:leading-6 text-center md:text-justify">
             {locale === "pt" ? banner?.descriptionPt : 
               locale === "en" ? banner?.descriptionEn : 
                 locale === "es" ? banner?.descriptionEs : 
                   locale === "it" ? banner?.descriptionIt : ""}
           </p>
         </div>
-        {/* <div className="w-full md:w-1 h-[2px] md:h-[216px] bg-gradient-to-r md:bg-gradient-to-b from-main via-white to-main" /> */}
+        <div className="w-full md:w-1 h-[2px] md:h-[216px] bg-gradient-to-r md:bg-gradient-to-b from-main via-white to-main" />
         <div className="max-w-[120px] flex items-center justify-center">
           <Image
             src="/logo_02.png"
