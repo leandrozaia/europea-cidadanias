@@ -25,7 +25,7 @@ export function Service({ service }: Props) {
 
   return (
     <div className="w-full bg-white rounded-2xl p-6 flex flex-col items-center justify-between gap-6 h-[325px] md:h-[404px]">
-      <div className="flex flex-col gap-6 items-center">
+      <div className="flex flex-col gap-4 items-center">
         <CMSIcon icon={service.iconSvg} />
         <h3 className="text-main text-lg font-bold text-center">
           {locale === "pt" && service.namePt}
@@ -33,7 +33,7 @@ export function Service({ service }: Props) {
           {locale === "es" && service.nameEs}
           {locale === "it" && service.nameIt}
         </h3>
-        <p className="text-sm font-medium text-justify text-main">
+        <p className="text-sm sm:text-base font-medium text-justify text-main">
           {locale === "pt" && service.descriptionPt}
           {locale === "en" && service.descriptionEn}
           {locale === "es" && service.descriptionEs}

@@ -57,22 +57,22 @@ export function Member({ member }: Props) {
       </p>
       <div className="flex gap-5 justify-center">
         {member.facebookUrl && (
-          <a className="cursor-pointer" href={member.facebookUrl} target="_blank">
+          <a className="cursor-pointer" href={member.facebookUrl} target="_blank" rel="noopener noreferrer">
             <FaFacebook className="w-5 h-5 text-white" />
           </a>
         )}
         {member.instagramUrl && (
-          <a className="cursor-pointer" href={member.instagramUrl} target="_blank">
+          <a className="cursor-pointer" href={member.instagramUrl} target="_blank" rel="noopener noreferrer">
             <FaInstagram className="w-5 h-5 text-white" />
           </a>
         )}
         {member.linkedInUrl && (
-          <a className="cursor-pointer" href={member.linkedInUrl} target="_blank">
+          <a className="cursor-pointer" href={member.linkedInUrl} target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="w-5 h-5 text-white" />
           </a>
         )}
         {member.whatsAppNumber && (
-          <a className="cursor-pointer" href={member.whatsAppNumber} target="_blank">
+          <a className="cursor-pointer" href={`https://api.whatsapp.com/send?phone=${member.whatsAppNumber}`} target="_blank" rel="noopener noreferrer">
             <FaWhatsapp className="w-5 h-5 text-white" />
           </a>
         )}

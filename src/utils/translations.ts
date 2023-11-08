@@ -28,7 +28,8 @@ export const translations: any = {
       title: "Tudo o que você precisa saber sobre a Europea Cidadanias",
     },
     footerSection: {
-      address: "Endereço",
+      address: "Sede (PT)",
+      addressTwo: "Sede (BR)",
       phone: "Telefone",
       email: "E-mail"
     },
@@ -72,7 +73,8 @@ export const translations: any = {
       title: "Everything you need to know about Europea Cidadanias",
     },
     footerSection: {
-      address: "Address",
+      address: "Headquarters (PT)",
+      addressTwo: "Headquarters (BR)",
       phone: "Phone",
       email: "Email"
     },
@@ -116,7 +118,8 @@ export const translations: any = {
       title: "Todo lo que necesitas saber sobre las Ciudadanías Europeas",
     },
     footerSection: {
-      address: "Dirección",
+      address: "Sede (PT)",
+      addressTwo: "Sede (BR)",
       phone: "Teléfono",
       email: "Correo Electrónico"
     },
@@ -160,7 +163,8 @@ export const translations: any = {
       title: "Tutto quello che devi sapere sulla Cidadanias europea",
     },
     footerSection: {
-      address: "Indirizzo",
+      address: "Sede Centrale (PT)",
+      addressTwo: "Sede Centrale (BR)",
       phone: "Telefono",
       email: "E-mail"
     },

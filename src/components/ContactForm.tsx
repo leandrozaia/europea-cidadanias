@@ -9,6 +9,7 @@ interface Props {
   footer: {
     iframe: string
     address: string
+    addressTwo: string
     phone: string
     email: string
     facebookUrl: string
@@ -73,6 +74,13 @@ export function ContactForm({ footer }: Props) {
             <p className="flex gap-2 items-center text-white mb-8">
               <MdLocationOn className="w-5 h-5" />
               {footer.address}
+            </p>
+            <h3 className="text-3xl text-white font-bold mb-4">
+              {footerSection.addressTwo}
+            </h3>
+            <p className="flex gap-2 items-center text-white mb-8">
+              <MdLocationOn className="w-5 h-5" />
+              {footer.addressTwo}
             </p>
             <h3 className="text-3xl text-white font-bold mb-4">
               {footerSection.phone}

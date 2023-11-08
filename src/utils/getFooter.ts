@@ -6,6 +6,7 @@ export function getFooter() {
       footer(where: {title: "Footer"}) {
         iframe
         address
+        addressTwo
         phone
         email
         facebookUrl
