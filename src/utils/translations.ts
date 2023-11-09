@@ -4,6 +4,7 @@ export const translations: any = {
       n1: "Saiba Mais"
     },
     header: {
+      home: "Início",
       aboutUs: "Sobre Nós",
       services: "Serviços",
       blog: "Blog",
@@ -28,9 +29,9 @@ export const translations: any = {
       title: "Tudo o que você precisa saber sobre a Europea Cidadanias",
     },
     footerSection: {
-      address: "Sede (PT)",
-      addressTwo: "Sede (BR)",
-      phone: "Telefone",
+      address: "Sede (Lisboa)",
+      addressTwo: "Sede (São Paulo)",
+      phone: "WhatsApp",
       email: "E-mail"
     },
     postPage: {
@@ -49,6 +50,7 @@ export const translations: any = {
       n1: "Know More"
     },
     header: {
+      home: "Home",
       aboutUs: "About Us",
       services: "Services",
       blog: "Blog",
@@ -73,9 +75,9 @@ export const translations: any = {
       title: "Everything you need to know about Europea Cidadanias",
     },
     footerSection: {
-      address: "Headquarters (PT)",
-      addressTwo: "Headquarters (BR)",
-      phone: "Phone",
+      address: "Headquarters (Lisboa)",
+      addressTwo: "Headquarters (São Paulo)",
+      phone: "WhatsApp",
       email: "Email"
     },
     postPage: {
@@ -94,6 +96,7 @@ export const translations: any = {
       n1: "Sepa Mas"
     },
     header: {
+      home: "Comenzar",
       aboutUs: "Sobre Nosotros",
       services: "Servicios",
       blog: "Blog",
@@ -118,9 +121,9 @@ export const translations: any = {
       title: "Todo lo que necesitas saber sobre las Ciudadanías Europeas",
     },
     footerSection: {
-      address: "Sede (PT)",
-      addressTwo: "Sede (BR)",
-      phone: "Teléfono",
+      address: "Sede (Lisboa)",
+      addressTwo: "Sede (São Paulo)",
+      phone: "WhatsApp",
       email: "Correo Electrónico"
     },
     postPage: {
@@ -139,6 +142,7 @@ export const translations: any = {
       n1: "Saperne di Più"
     },
     header: {
+      home: "Inizio",
       aboutUs: "Chi Siamo",
       services: "Servizi",
       blog: "Blog",
@@ -163,9 +167,9 @@ export const translations: any = {
       title: "Tutto quello che devi sapere sulla Cidadanias europea",
     },
     footerSection: {
-      address: "Sede Centrale (PT)",
-      addressTwo: "Sede Centrale (BR)",
-      phone: "Telefono",
+      address: "Sede Centrale (Lisboa)",
+      addressTwo: "Sede Centrale (São Paulo)",
+      phone: "WhatsApp",
       email: "E-mail"
     },
     postPage: {

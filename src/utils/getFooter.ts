@@ -8,6 +8,7 @@ export function getFooter() {
         address
         addressTwo
         phone
+        phoneTwo
         email
         facebookUrl
         instagramUrl

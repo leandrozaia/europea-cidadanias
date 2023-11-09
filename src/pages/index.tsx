@@ -42,7 +42,7 @@ export default function Home({ data }: any) {
         <Testimonials testimonials={testimonials} />
         <OurBlog posts={posts} />
         <ContactForm footer={footer} />
-        <FAQ faqs={faqs} />
+        <FAQ faqs={faqs} footer={footer} />
         <Footer footer={footer} />
       </div>
     </>

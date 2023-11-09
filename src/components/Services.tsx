@@ -71,7 +71,16 @@ export function Services({ services }: Props) {
             {servicesSection.title}
           </h2>
 
-          <Slider {...settings} className="max-w-3xl mx-auto mb-12">
+          <Image
+            src="/leandro.png"
+            alt="Imagem do nosso sócio Leandro Zaia"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="absolute bottom-0 -left-[220px] w-auto max-w-[320px] h-[512px] object-cover"
+          />
+
+          <Slider {...settings} className="max-w-3xl mx-auto mb-12 z-10">
             {services.map(service => (
               <div key={service.namePt} className="px-3">
                 <Service service={service} />
@@ -85,7 +94,7 @@ export function Services({ services }: Props) {
             width={0}
             height={0}
             sizes="100vw"
-            className="w-5/6 sm:w-2/4 lg:w-1/3 relative mx-auto xl:absolute xl:bottom-0 xl:-right-[119px]"
+            className="absolute bottom-0 -right-[220px] w-auto max-w-[320px] h-[512px] object-cover"
           />
         </div>
       </div>

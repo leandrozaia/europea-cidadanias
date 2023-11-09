@@ -14,11 +14,24 @@ interface FAQProps {
   answerIt: string
 }
 
-interface Props {
-  faqs: FAQProps[]
+interface FooterProps {
+  iframe: string
+  address: string
+  addressTwo: string
+  phone: string
+  email: string
+  facebookUrl: string
+  instagramUrl: string
+  linkedInUrl: string
+  whatsAppNumber: string
 }
 
-export function FAQ({ faqs }: Props) {
+interface Props {
+  faqs: FAQProps[]
+  footer: FooterProps
+}
+
+export function FAQ({ faqs, footer }: Props) {
   const { locale } = useRouter()
   const { faq } = translations[locale as string]
 
@@ -33,34 +46,17 @@ export function FAQ({ faqs }: Props) {
         className="absolute w-full h-full object-cover"
       />
       <div className="absolute w-full h-full bg-white opacity-90" />
-      <div className="relative max-w-5xl w-full my-24 flex flex-col lg:flex-row gap-12 px-4 lg:px-0">
+      <div className="relative max-w-5xl w-full my-24 flex flex-col md:flex-row gap-12 px-4 lg:px-0">
 
-        {/* Banner */}
+        {/* Map */}
         <div className="relative w-full min-h-[512px]">
-          <Image
-            src="/coliseu.png"
-            alt="Imagem do coliseu"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full h-full object-cover rounded-[32px]"
+          <iframe
+            src={footer.iframe}
+            className="w-full aspect-square rounded-2xl border-0 shadow-md"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           />
-          <div className="absolute top-0 w-full h-full bg-main opacity-90 rounded-[32px]" />
-
-          {/* Content */}
-          <div className="absolute top-0 w-full h-full z-10 flex flex-col items-end justify-between">
-            <h3 className="text-white font-bold text-xl sm:text-2xl mx-8 mt-8">
-              {faq.title}
-            </h3>
-            <Image
-              src="/leandro.png"
-              alt="Imagem do coliseu"
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="w-auto h-[380px] sm:h-[400px] lg:h-[450px] mr-5"
-            />
-          </div>
         </div>
 
         <div className="w-full flex flex-col gap-6">
