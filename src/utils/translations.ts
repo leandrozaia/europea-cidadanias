@@ -27,11 +27,14 @@ export const translations: any = {
     },
     faq: {
       title: "Tudo o que você precisa saber sobre a Europea Cidadanias",
+      p1: "Ainda tem alguma dúvida?",
+      p2: "Fale conosco pelo ",
     },
     footerSection: {
-      address: "Sede (Lisboa)",
-      addressTwo: "Sede (São Paulo)",
-      phone: "WhatsApp",
+      address: "Sede Lisboa - Portugal",
+      addressTwo: "Sede São Paulo - Brasil",
+      phone: "Telefone",
+      whatsapp: "Whatsapp",
       email: "E-mail"
     },
     postPage: {
@@ -73,11 +76,14 @@ export const translations: any = {
     },
     faq: {
       title: "Everything you need to know about Europea Cidadanias",
+      p1: "Still have any questions?",
+      p2: "Contact us at ",
     },
     footerSection: {
-      address: "Headquarters (Lisboa)",
-      addressTwo: "Headquarters (São Paulo)",
-      phone: "WhatsApp",
+      address: "Headquarters Lisboa - Portugal",
+      addressTwo: "Headquarters São Paulo - Brasil",
+      phone: "Phone",
+      whatsapp: "Whatsapp",
       email: "Email"
     },
     postPage: {
@@ -119,11 +125,14 @@ export const translations: any = {
     },
     faq: {
       title: "Todo lo que necesitas saber sobre las Ciudadanías Europeas",
+      p1: "¿Aún tienes alguna pregunta?",
+      p2: "Contactanos en ",
     },
     footerSection: {
-      address: "Sede (Lisboa)",
-      addressTwo: "Sede (São Paulo)",
-      phone: "WhatsApp",
+      address: "Sede Lisboa - Portugal",
+      addressTwo: "Sede São Paulo - Brasil",
+      phone: "Teléfono",
+      whatsapp: "Whatsapp",
       email: "Correo Electrónico"
     },
     postPage: {
@@ -165,11 +174,14 @@ export const translations: any = {
     },
     faq: {
       title: "Tutto quello che devi sapere sulla Cidadanias europea",
+      p1: "Hai ancora domande?",
+      p2: "Contattaci al ",
     },
     footerSection: {
-      address: "Sede Centrale (Lisboa)",
-      addressTwo: "Sede Centrale (São Paulo)",
-      phone: "WhatsApp",
+      address: "Sede Centrale Lisboa - Portugal",
+      addressTwo: "Sede Centrale São Paulo - Brasil",
+      phone: "Telefono",
+      whatsapp: "Whatsapp",
       email: "E-mail"
     },
     postPage: {

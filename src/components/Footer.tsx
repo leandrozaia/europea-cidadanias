@@ -45,6 +45,13 @@ export function Footer({ footer }: Props) {
             {footer.phone}
           </p>
           <h3 className="text-3xl text-white font-bold mb-4">
+            {footerSection.whatsapp}
+          </h3>
+          <p className="flex gap-2 items-center text-white mb-8">
+            <BsWhatsapp className="w-5 h-5 text-white" />
+            {footer.phone}
+          </p>
+          <h3 className="text-3xl text-white font-bold mb-4">
             {footerSection.email}
           </h3>
           <p className="flex break-all gap-2 items-center text-white mb-8">
@@ -82,6 +89,13 @@ export function Footer({ footer }: Props) {
           <p className="flex gap-2 items-center text-white mb-8">
             <MdPhone className="w-5 h-5" />
             {footer.phoneTwo}
+          </p>
+          <h3 className="text-3xl text-white font-bold mb-4">
+            {footerSection.whatsapp}
+          </h3>
+          <p className="flex gap-2 items-center text-white mb-8">
+            <BsWhatsapp className="w-5 h-5 text-white" />
+            {footer.phone}
           </p>
           <h3 className="text-3xl text-white font-bold mb-4">
             {footerSection.email}
