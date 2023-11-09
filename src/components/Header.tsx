@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { MdHome, MdMenu, MdCall, MdOutlineArticle, MdOutlineCategory, MdPeopleAlt } from "react-icons/md"
+import { FaPassport } from "react-icons/fa"
 import { useState } from "react"
 import { useRouter } from "next/router"
 import { translations } from "@/utils/translations"
@@ -26,9 +27,18 @@ export function Header() {
             />
           </div>
         </Link>
-        <nav className="hidden sm:flex gap-4 items-center">
+        <nav className="hidden xl:flex gap-4 items-center">
           <Link className="text-white font-bold" href="/">
             {header.home}
+          </Link>
+          <Link className="text-white font-bold" href="/#">
+            Cidadania Portuguesa
+          </Link>
+          <Link className="text-white font-bold" href="/#">
+            Cidadania Italiana
+          </Link>
+          <Link className="text-white font-bold" href="/#">
+            Carreira Internacional
           </Link>
           <Link className="text-white font-bold" href="/#about-us">
             {header.aboutUs}
@@ -44,26 +54,38 @@ export function Header() {
           </Link>
           <ToggleLanguage />
         </nav>
-        <MdMenu onClick={() => setShow(prev => !prev)} className="flex sm:hidden w-6 h-6 text-white cursor-pointer" />
+        <MdMenu onClick={() => setShow(prev => !prev)} className="flex xl:hidden w-6 h-6 text-white cursor-pointer" />
       </div>
-      {show && <nav className="flex flex-col sm:hidden bg-white">
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium p-6" href="/">
+      {show && <nav className="flex flex-col xl:hidden bg-white md:pt-8">
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/">
           <MdHome className="w-10 h-10 p-2" />
           {header.home}
         </Link>
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium p-6" href="/#about-us">
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/">
+          <FaPassport className="w-10 h-10 p-2" />
+          Cidadania Portuguesa
+        </Link>
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/">
+          <FaPassport className="w-10 h-10 p-2" />
+          Cidadania Italiana
+        </Link>
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/">
+          <FaPassport className="w-10 h-10 p-2" />
+          Carreira Internacional
+        </Link>
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/#about-us">
           <MdPeopleAlt className="w-10 h-10 p-2" />
           {header.aboutUs}
         </Link>
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium p-6" href="/#services">
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/#services">
           <MdOutlineCategory className="w-10 h-10 p-2" />
           {header.services}
         </Link>
-        <Link className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium p-6" href="/blog">
+        <Link className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/blog">
           <MdOutlineArticle className="w-10 h-10 p-2" />
           {header.blog}
         </Link>
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium p-6" href={asPath === "/" ? "/#footer" : `${asPath}/#footer`}>
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href={asPath === "/" ? "/#footer" : `${asPath}/#footer`}>
           <MdCall className="w-10 h-10 p-2" />
           {header.contact}
         </Link>
@@ -72,7 +94,7 @@ export function Header() {
             key={l}
             href={asPath}
             locale={l}
-            className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium p-6"
+            className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6"
             role="menuitem"
           >
             <Image

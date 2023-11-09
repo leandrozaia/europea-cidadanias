@@ -77,7 +77,7 @@ export function Services({ services }: Props) {
             width={0}
             height={0}
             sizes="100vw"
-            className="absolute bottom-0 -left-[220px] w-auto max-w-[320px] h-[512px] object-cover"
+            className="hidden xl:block absolute bottom-0 -left-[220px] w-auto max-w-[320px] h-[512px] object-cover"
           />
 
           <Slider {...settings} className="max-w-3xl mx-auto mb-12 z-10">
@@ -94,8 +94,28 @@ export function Services({ services }: Props) {
             width={0}
             height={0}
             sizes="100vw"
-            className="absolute bottom-0 -right-[220px] w-auto max-w-[320px] h-[512px] object-cover"
+            className="hidden xl:block absolute bottom-0 -right-[220px] w-auto max-w-[320px] h-[512px] object-cover"
           />
+
+          {/* Telas médias e pequenas APENAS */}
+          <div className="flex flex-col sm:flex-row items-center justify-between">
+            <Image
+              src="/leandro.png"
+              alt="Imagem do nosso sócio Leandro Zaia"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="block xl:hidden bottom-0 -left-[220px] w-auto max-w-[320px] h-[512px] object-cover"
+            />
+            <Image
+              src="/mateus.png"
+              alt="Imagem do nosso sócio Mateus Dallabrida"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="xl:absolute bottom-0 -right-[220px] w-auto max-w-[320px] h-[512px] object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

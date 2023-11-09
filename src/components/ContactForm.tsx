@@ -92,7 +92,7 @@ export function ContactForm({ footer }: Props) {
             <h3 className="text-3xl text-white font-bold mb-4">
               {footerSection.email}
             </h3>
-            <p className="flex gap-2 items-center text-white mb-8">
+            <p className="flex break-all gap-2 items-center text-white mb-8">
               <MdAttachEmail className="w-5 h-5" />
               {footer.email}
             </p>
