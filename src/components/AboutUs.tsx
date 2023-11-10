@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { translations } from "@/utils/translations"
+import { motion } from "framer-motion"
 
 interface aboutUsProps {
   descriptionPt: string
@@ -56,13 +57,31 @@ export function AboutUs({ aboutUs }: Props) {
               {generic.n1}
             </a>
           </div>
+
+          <motion.div
+            initial={{ x: 388 }}
+            whileInView={{ x: 0 }}
+            transition={{ type: "tween", duration: 1.25 }}
+            className="hidden xl:block absolute bottom-0 -right-10 w-1/3 mx-0"
+          >
+            <Image
+              src="/cassia.png"
+              alt="Imagem de nossa sócia Cássia Mesquita"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full"
+            />
+          </motion.div>
+
+          {/* Telas médias e pequenas APENAS */}
           <Image
             src="/cassia.png"
             alt="Imagem de nossa sócia Cássia Mesquita"
             width={0}
             height={0}
             sizes="100vw"
-            className="md:absolute bottom-0 right-0 lg:-right-10 w-5/6 sm:w-2/4 lg:w-1/3 mx-auto md:mx-0"
+            className="block xl:hidden md:absolute bottom-0 right-0 lg:-right-10 w-5/6 sm:w-2/4 lg:w-1/3 mx-auto md:mx-0"
           />
         </div>
       </div>

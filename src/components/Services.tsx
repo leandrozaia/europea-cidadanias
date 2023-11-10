@@ -1,6 +1,7 @@
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { motion } from "framer-motion"
 
 import Image from "next/image"
 import { Service } from "@/components/Service"
@@ -71,14 +72,21 @@ export function Services({ services }: Props) {
             {servicesSection.title}
           </h2>
 
-          <Image
-            src="/leandro.png"
-            alt="Imagem do nosso sócio Leandro Zaia"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="hidden xl:block absolute bottom-0 -left-[220px] w-auto max-w-[320px] h-[512px] object-cover"
-          />
+          <motion.div
+            initial={{ x: -216 }}
+            whileInView={{ x: 0 }}
+            transition={{ type: "tween", duration: 1.25 }}
+            className="hidden xl:block absolute bottom-0 -left-[220px] w-auto max-w-[320px] h-[512px]"
+          >
+            <Image
+              src="/leandro.png"
+              alt="Imagem do nosso sócio Leandro Zaia"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
 
           <Slider {...settings} className="max-w-3xl mx-auto mb-12 z-10">
             {services.map(service => (
@@ -88,14 +96,21 @@ export function Services({ services }: Props) {
             ))}
           </Slider>
 
-          <Image
-            src="/mateus.png"
-            alt="Imagem do nosso sócio Mateus Dallabrida"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="hidden xl:block absolute bottom-0 -right-[220px] w-auto max-w-[320px] h-[512px] object-cover"
-          />
+          <motion.div
+            initial={{ x: 216 }}
+            whileInView={{ x: 0 }}
+            transition={{ type: "tween", duration: 1.25 }}
+            className="hidden xl:block absolute bottom-0 -right-[220px] w-auto max-w-[320px] h-[512px]"
+          >
+            <Image
+              src="/mateus.png"
+              alt="Imagem do nosso sócio Mateus Dallabrida"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
 
           {/* Telas médias e pequenas APENAS */}
           <div className="flex flex-col sm:flex-row items-center justify-between">
@@ -113,7 +128,7 @@ export function Services({ services }: Props) {
               width={0}
               height={0}
               sizes="100vw"
-              className="xl:absolute bottom-0 -right-[220px] w-auto max-w-[320px] h-[512px] object-cover"
+              className="block xl:hidden bottom-0 -right-[220px] w-auto max-w-[320px] h-[512px] object-cover"
             />
           </div>
         </div>
