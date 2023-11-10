@@ -23,8 +23,8 @@ export function ToggleLanguage() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-3 w-44 rounded-md shadow-lg bg-white">
-          <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+        <div className="absolute right-0 mt-3 w-44 rounded-md shadow-md bg-white">
+          <div className="py-3" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {locales?.filter((l) => l !== locale).map((l) => (
               <Link
                 key={l}

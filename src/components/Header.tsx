@@ -1,11 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
-import { MdHome, MdMenu, MdCall, MdOutlineArticle, MdOutlineCategory, MdPeopleAlt } from "react-icons/md"
-import { FaPassport } from "react-icons/fa"
+import { MdHome, MdMenu, MdCall, MdOutlineArticle, MdPeopleAlt } from "react-icons/md"
 import { useState } from "react"
 import { useRouter } from "next/router"
 import { translations } from "@/utils/translations"
 import { ToggleLanguage } from "@/components/ToggleLanguage"
+import { DropdownMenu } from "@/components/DropdownMenu"
+import { AccordeonMenu } from "@/components/AccordeonMenu"
 
 export function Header() {
   const [show, setShow] = useState(false)
@@ -27,25 +28,18 @@ export function Header() {
             />
           </div>
         </Link>
-        <nav className="hidden xl:flex gap-4 items-center">
+        <nav className="hidden md:flex gap-4 items-center">
           <Link className="text-white font-bold" href="/">
             {header.home}
-          </Link>
-          <Link className="text-white font-bold" href="/#">
-            Cidadania Portuguesa
-          </Link>
-          <Link className="text-white font-bold" href="/#">
-            Cidadania Italiana
-          </Link>
-          <Link className="text-white font-bold" href="/#">
-            Carreira Internacional
           </Link>
           <Link className="text-white font-bold" href="/#about-us">
             {header.aboutUs}
           </Link>
-          <Link className="text-white font-bold" href="/#services">
-            {header.services}
-          </Link>
+          <DropdownMenu menu="Serviços" items={[
+            { value: "Cidadania Portuguesa", href: "#" },
+            { value: "Cidadania Italiana", href: "#" },
+            { value: "Carreira Internacional", href: "#" }
+          ]} />
           <Link className="text-white font-bold" href="/blog">
             {header.blog}
           </Link>
@@ -54,33 +48,22 @@ export function Header() {
           </Link>
           <ToggleLanguage />
         </nav>
-        <MdMenu onClick={() => setShow(prev => !prev)} className="flex xl:hidden w-6 h-6 text-white cursor-pointer" />
+        <MdMenu onClick={() => setShow(prev => !prev)} className="flex md:hidden w-6 h-6 text-white cursor-pointer" />
       </div>
-      {show && <nav className="flex flex-col xl:hidden bg-white md:pt-8">
+      {show && <nav className="flex flex-col md:hidden bg-white md:pt-8">
         <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/">
           <MdHome className="w-10 h-10 p-2" />
           {header.home}
-        </Link>
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/">
-          <FaPassport className="w-10 h-10 p-2" />
-          Cidadania Portuguesa
-        </Link>
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/">
-          <FaPassport className="w-10 h-10 p-2" />
-          Cidadania Italiana
-        </Link>
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/">
-          <FaPassport className="w-10 h-10 p-2" />
-          Carreira Internacional
         </Link>
         <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/#about-us">
           <MdPeopleAlt className="w-10 h-10 p-2" />
           {header.aboutUs}
         </Link>
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/#services">
-          <MdOutlineCategory className="w-10 h-10 p-2" />
-          {header.services}
-        </Link>
+        <AccordeonMenu menu="Serviços" items={[
+          { value: "Cidadania Portuguesa", href: "#" },
+          { value: "Cidadania Italiana", href: "#" },
+          { value: "Carreira Internacional", href: "#" },
+        ]} />
         <Link className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/blog">
           <MdOutlineArticle className="w-10 h-10 p-2" />
           {header.blog}
