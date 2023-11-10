@@ -26,7 +26,7 @@ export const translations: any = {
       title: "Nosso Blog"
     },
     faq: {
-      title: "Tudo o que você precisa saber sobre a Europea Cidadanias",
+      title: "O que nossos clientes mais perguntam para a equipe da Europea cidadanias?",
       p1: "Ainda tem alguma dúvida?",
       p2: "Fale conosco pelo ",
     },
@@ -75,7 +75,7 @@ export const translations: any = {
       title: "Our Blog"
     },
     faq: {
-      title: "Everything you need to know about Europea Cidadanias",
+      title: "What do our customers most ask the Europea citizenships team?",
       p1: "Still have any questions?",
       p2: "Contact us at ",
     },
@@ -124,7 +124,7 @@ export const translations: any = {
       title: "Nuestro blog"
     },
     faq: {
-      title: "Todo lo que necesitas saber sobre las Ciudadanías Europeas",
+      title: "¿Qué es lo que más preguntan nuestros clientes al equipo de ciudadanía europea?",
       p1: "¿Aún tienes alguna pregunta?",
       p2: "Contactanos en ",
     },
@@ -173,7 +173,7 @@ export const translations: any = {
       title: "Il Nostro Blog"
     },
     faq: {
-      title: "Tutto quello che devi sapere sulla Cidadanias europea",
+      title: "Cosa chiedono di più i nostri clienti al team Cittadinanze Europee?",
       p1: "Hai ancora domande?",
       p2: "Contattaci al ",
     },

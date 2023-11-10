@@ -62,7 +62,7 @@ export function FAQ({ faqs, footer }: Props) {
 
           {/* Content */}
           <div className="absolute top-0 w-full h-full z-10 flex flex-col gap-6 p-8">
-            <h3 className="text-white font-bold text-xl sm:text-2xl">
+            <h3 className="text-white font-bold text-xl">
               {faq.title}
             </h3>
             <div>
