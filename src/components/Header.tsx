@@ -51,6 +51,18 @@ export function Header() {
               { value: "Para Descendentes de Judeus Sefarditas", href: "/cidadania-portuguesa#descendentes-judeus-sefarditas" },
               { value: "Visto de Insvestidor", href: "/cidadania-portuguesa#visto-investidor" },
           ]} />
+          <DropdownMenu
+            menu={{
+              value: "Cidadania Italiana",
+              href: "/cidadania-italiana"
+            }}
+            items={[
+              { value: "Via Judicial", href: "/cidadania-italiana#via-judicial" },
+              { value: "Processo Via Linha Materna", href: "/cidadania-italiana#processo-via-linha-materna" },
+              { value: "Via Matrimônio", href: "/cidadania-italiana#via-matrimônio" },
+              { value: "Para Filhos de Italiano", href: "/cidadania-italiana#para-filhos-de-italiano" },
+              { value: "Trentinos", href: "/cidadania-italiana#trentinos" },
+          ]} />
           <Link className="text-white" href="/#services">
             {header.services}
           </Link>
@@ -82,6 +94,13 @@ export function Header() {
           { value: "Por Tempo de Residência", href: "/cidadania-portuguesa#tempo-residencia" },
           { value: "Para Descendentes de Judeus Sefarditas", href: "/cidadania-portuguesa#descendentes-judeus-sefarditas" },
           { value: "Visto de Insvestidor", href: "/cidadania-portuguesa#visto-investidor" },
+        ]} />
+        <AccordeonMenu onClick={() => setShow(prev => !prev)} menu="Cidadania Italiana" icon={<FaPassport className="w-10 h-10 p-2" />} items={[
+          { value: "Via Judicial", href: "/cidadania-italiana#via-judicial" },
+          { value: "Processo Via Linha Materna", href: "/cidadania-italiana#processo-via-linha-materna" },
+          { value: "Via Matrimônio", href: "/cidadania-italiana#via-matrimônio" },
+          { value: "Para Filhos de Italiano", href: "/cidadania-italiana#para-filhos-de-italiano" },
+          { value: "Trentinos", href: "/cidadania-italiana#trentinos" },
         ]} />
         <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/#services">
           <MdOutlineCategory className="w-10 h-10 p-2" />
