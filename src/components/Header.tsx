@@ -47,7 +47,7 @@ export function Header() {
               { value: "Para Bisnetos de Portugueses", href: "/cidadania-portuguesa#bisnetos-portugueses" },
               { value: "Por Casamento/União Estável", href: "/cidadania-portuguesa#casamento-uniao-estavel" },
               { value: "Para Filhos de Estrangeiros Nascidos em Portugal", href: "/cidadania-portuguesa#filhos-estrangeiros-nascidos-portugal" },
-              { value: "Por Tempo de Residência", href: "/cidadania-portuguesa#tempo-resisdência" },
+              { value: "Por Tempo de Residência", href: "/cidadania-portuguesa#tempo-residencia" },
               { value: "Para Descendentes de Judeus Sefarditas", href: "/cidadania-portuguesa#descendentes-judeus-sefarditas" },
               { value: "Visto de Insvestidor", href: "/cidadania-portuguesa#visto-investidor" },
           ]} />
@@ -79,7 +79,7 @@ export function Header() {
           { value: "Para Bisnetos de Portugueses", href: "/cidadania-portuguesa#bisnetos-portugueses" },
           { value: "Por Casamento/União Estável", href: "/cidadania-portuguesa#casamento-uniao-estavel" },
           { value: "Para Filhos de Estrangeiros Nascidos em Portugal", href: "/cidadania-portuguesa#filhos-estrangeiros-nascidos-portugal" },
-          { value: "Por Tempo de Residência", href: "/cidadania-portuguesa#tempo-resisdência" },
+          { value: "Por Tempo de Residência", href: "/cidadania-portuguesa#tempo-residencia" },
           { value: "Para Descendentes de Judeus Sefarditas", href: "/cidadania-portuguesa#descendentes-judeus-sefarditas" },
           { value: "Visto de Insvestidor", href: "/cidadania-portuguesa#visto-investidor" },
         ]} />

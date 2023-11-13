@@ -1,6 +1,13 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import { ForChildren } from '@/components/ForChildren'
+import { ForChildrenOfPortuguese } from '@/components/cidadania-portuguesa/ForChildrenOfPortuguese'
+import { ForGrandchildrenOfPortuguese } from '@/components/cidadania-portuguesa/ForGrandchildrenOfPortuguese'
+import { ForGreatGrandchildrenOfPortuguese } from '@/components/cidadania-portuguesa/ForGreatGrandchildrenOfPortuguese'
+import { ByMarriageOrStableUnion } from '@/components/cidadania-portuguesa/ByMarriageOrStableUnion'
+import { ForChildrenOfForeignersBornInPortugal } from '@/components/cidadania-portuguesa/ForChildrenOfForeignersBornInPortugal'
+import { ByLengthOfResidence } from '@/components/cidadania-portuguesa/ByLengthOfResidence'
+import { ForDescendantsOfSephardicJews } from '@/components/cidadania-portuguesa/ForDescendantsOfSephardicJews'
+import { InvestorVisa } from '@/components/cidadania-portuguesa/InvestorVisa'
 
 import { getFooter } from '@/utils/getFooter'
 
@@ -12,7 +19,14 @@ export default function CidadaniaPortuguesa({ data }: any) {
     <>
       <Header />
       <div className="relative top-[72px] sm:top-[80px]">
-        <ForChildren />
+        <ForChildrenOfPortuguese />
+        <ForGrandchildrenOfPortuguese />
+        <ForGreatGrandchildrenOfPortuguese />
+        <ByMarriageOrStableUnion />
+        <ForChildrenOfForeignersBornInPortugal />
+        <ByLengthOfResidence />
+        <ForDescendantsOfSephardicJews />
+        <InvestorVisa />
         <Footer footer={footer} />
       </div>
     </>
