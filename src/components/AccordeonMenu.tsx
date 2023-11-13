@@ -10,9 +10,11 @@ interface Item {
 interface Props {
   menu: string
   items: Item[]
+  icon: React.ReactNode
+  onClick: any
 }
 
-export function AccordeonMenu({ menu, items }: Props) {
+export function AccordeonMenu({ menu, items, icon, onClick }: Props) {
   const [showItems, setShowItems] = useState(false)
 
   const handleItems = () => {
@@ -26,7 +28,7 @@ export function AccordeonMenu({ menu, items }: Props) {
           onClick={handleItems}
           className="w-full flex gap-4 items-center font-medium text-main py-4 px-6 cursor-pointer"
         >
-          <MdOutlineCategory className="w-10 h-10 p-2" />
+          {icon}
           {menu}
         </span>
         <MdArrowDropDownCircle
@@ -36,7 +38,7 @@ export function AccordeonMenu({ menu, items }: Props) {
       </div>
 
       {showItems && (
-        <div className="w-full flex flex-col">
+        <div onClick={onClick} className="w-full flex flex-col">
           {items.map(item => (
             <AccordeonItem
             key={item.value}

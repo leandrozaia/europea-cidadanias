@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { useState } from "react"
 import { DropdownItem } from "@/components/DropdownItem"
 
@@ -7,28 +8,36 @@ interface Item {
 }
 
 interface Props {
-  menu: string
+  menu: {
+    value: string
+    href: string
+  }
   items: Item[]
 }
 
 export function DropdownMenu({ menu, items }: Props) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [dropdownVisivel, setDropdownVisivel] = useState(false)
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen)
+  const mostrarDropdown = () => {
+    setDropdownVisivel(true)
+  }
+
+  const esconderDropdown = () => {
+    setDropdownVisivel(false)
   }
 
   return (
     <div
-      onClick={toggleDropdown}
+      onMouseEnter={mostrarDropdown}
+      onMouseLeave={esconderDropdown}
       className="relative inline-block text-left group"
     >
-      <span className="text-white font-bold cursor-pointer">
-        {menu}
-      </span>
+      <Link className="text-white cursor-pointer pb-4" href={menu.href}>
+        {menu.value}
+      </Link>
 
-      {isOpen && (
-        <div className="absolute right-0 mt-3 w-64 rounded-md shadow-md bg-white">
+      {dropdownVisivel && (
+        <div className="absolute left-0 mt-3 w-64 rounded-md shadow-md bg-white">
           <div className="py-3" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {items.map(item => (
               <DropdownItem
