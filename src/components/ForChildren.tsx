@@ -63,7 +63,7 @@ export function ForChildren() {
           </div>
         </h2>
         <p className="text-lg text-gray-600 text-justify pb-4">
-          "Bisnetos de portugueses podem se qualificar para a cidadania portuguesa?"
+          &quot;Bisnetos de portugueses podem se qualificar para a cidadania portuguesa?&quot;
         </p>
         <p className="text-lg text-gray-600 text-justify pb-4">
           Embora a legislação portuguesa não estipule diretamente a possibilidade de bisnetos de portugueses adquirirem a cidadania, isso não exclui a oportunidade de obtenção. Bisnetos podem ser elegíveis para a cidadania portuguesa se um de seus pais ou avós adquirir a nacionalidade portuguesa. Isso os classifica como netos ou filhos de cidadãos portugueses, permitindo-lhes, então, solicitar a cidadania com base nesse parentesco. 
