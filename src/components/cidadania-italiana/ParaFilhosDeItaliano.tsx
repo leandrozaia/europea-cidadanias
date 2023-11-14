@@ -19,13 +19,13 @@ export function ParaFilhosDeItaliano() {
           </div>
         </h2>
         <p className="text-lg text-gray-600 text-justify pb-4">
-          A cidadania italiana para menores de 18 anos é um processo rápido. Um dos pais deve ter cidadania italiana. Além disso, o registro consular no A.I.R.E. deve estar atualizado. Filhos maiores de idade podem ter sua cidadania italiana reconhecida nos consulados italianos. No entanto, é possível concluir o processo sem enfrentar as longas filas de cidadania. Trata-se da "ação judicial direta para filhos". Saiba mais sobre o processo de cidadania italiana para filhos adultos. Entre em contato agora!
+          A cidadania italiana para menores de 18 anos é um processo rápido. Um dos pais deve ter cidadania italiana. Além disso, o registro consular no A.I.R.E. deve estar atualizado. Filhos maiores de idade podem ter sua cidadania italiana reconhecida nos consulados italianos. No entanto, é possível concluir o processo sem enfrentar as longas filas de cidadania. Trata-se da &quot;ação judicial direta para filhos&quot;. Saiba mais sobre o processo de cidadania italiana para filhos adultos. Entre em contato agora!
         </p>
         <div className="flex flex-col gap-4">
           <Acordeon
             accordeon={{
               question: "Quanto tempo leva o processo?",
-              answer: "Trata-se de um processo rápido e menos burocráƟco. Em média, o registro de uma criança menor de idade no consulado italiano varia de 2 a 6 meses, dependendo do município italiano e do consulado onde os pais estão registrados."
+              answer: "Trata-se de um processo rápido e menos burocrático. Em média, o registro de uma criança menor de idade no consulado italiano varia de 2 a 6 meses, dependendo do município italiano e do consulado onde os pais estão registrados."
             }}
           />
           <Acordeon
