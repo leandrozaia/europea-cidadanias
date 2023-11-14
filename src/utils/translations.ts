@@ -8,7 +8,27 @@ export const translations: any = {
       aboutUs: "Sobre Nós",
       services: "Serviços",
       blog: "Blog",
-      contact: "Contato"
+      contact: "Contato",
+      ptCitizenship: "Cidadania Portuguesa",
+      itCitizenship: "Cidadania Italiana",
+      career: "Carreira Internacional",
+      ptCitizenshipSub: {
+        ptChildren: "Para Filhos de Portugueses",
+        ptGrandchildren: "Para Netos de Portugueses",
+        ptGreatGrandchildren: "Para Bisnetos de Portugueses",
+        marriage: "Por Casamento/União Estável",
+        foreignChildren: "Para Filhos de Estrangeiros Nascidos em Portugal",
+        residenceTime: "Por Tempo de Residência",
+        jewishDescendants: "Para Descendentes de Judeus Sefarditas",
+        investorVisa: "Visto de Insvestidor"
+      },
+      itCitizenshipSub: {
+        judicialRoute: "Via Judicial",
+        maternalLine: "Processo Via Linha Materna",
+        marriage: "Via Matrimônio",
+        childrenItalian: "Para Filhos de Italianos",
+        trentinos: "Trentinos"
+      }
     },
     about: {
       title: "Sobre Nós",
@@ -57,7 +77,27 @@ export const translations: any = {
       aboutUs: "About Us",
       services: "Services",
       blog: "Blog",
-      contact: "Contact"
+      contact: "Contact",
+      ptCitizenship: "Portuguese Citizenship",
+      itCitizenship: "Italian Citizenship",
+      career: "International Career",
+      ptCitizenshipSub: {
+        ptChildren: "For Children of Portuguese",
+        ptGrandchildren: "For Grandchildren of Portuguese",
+        ptGreatGrandchildren: "For Great-grandchildren of Portuguese",
+        marriage: "By Marriage/Stable Union",
+        foreignChildren: "For Children of Foreigners Born in Portugal",
+        residenceTime: "By length of residence",
+        jewishDescendants: "For Descendants of Sephardic Jews",
+        investorVisa: "Investor Visa"
+      },
+      itCitizenshipSub: {
+        judicialRoute: "Judicial Route",
+        maternalLine: "Process Via Maternal Line",
+        marriage: "Via Marriage",
+        childrenItalian: "For Children of Italians",
+        trentinos: "Trentinos"
+      }
     },
     about: {
       title: "About Us",
@@ -106,7 +146,27 @@ export const translations: any = {
       aboutUs: "Sobre Nosotros",
       services: "Servicios",
       blog: "Blog",
-      contact: "Contacto"
+      contact: "Contacto",
+      ptCitizenship: "Ciudadanía Portuguesa",
+      itCitizenship: "Ciudadanía Italiana",
+      career: "Carrera Internacional",
+      ptCitizenshipSub: {
+        ptChildren: "Para Niños de Portugués",
+        ptGrandchildren: "Para Nietos de Portugueses",
+        ptGreatGrandchildren: "Para Bisnietos de Portugueses",
+        marriage: "Por Matrimonio/Unión Estable",
+        foreignChildren: "Para Hijos de Extranjeros Nacidos en Portugal",
+        residenceTime: "Por Tiempo de Residencia",
+        jewishDescendants: "Para los Descendientes de Judíos Sefardíes",
+        investorVisa: "Visa de Inversionista"
+      },
+      itCitizenshipSub: {
+        judicialRoute: "Vía Judicial",
+        maternalLine: "Proceso Vía Línea Materna",
+        marriage: "A Través del Matrimonio",
+        childrenItalian: "Para Hijos de Italianos",
+        trentinos: "Trentinos"
+      }
     },
     about: {
       title: "Sobre Nosotros",
@@ -155,7 +215,27 @@ export const translations: any = {
       aboutUs: "Chi Siamo",
       services: "Servizi",
       blog: "Blog",
-      contact: "Contatto"
+      contact: "Contatto",
+      ptCitizenship: "Cittadinanza Portoghese",
+      itCitizenship: "Cittadinanza Italiana",
+      career: "Carriera Internazionale",
+      ptCitizenshipSub: {
+        ptChildren: "Per Bambini di Portoghese",
+        ptGrandchildren: "Per i Nipoti del Portoghese",
+        ptGreatGrandchildren: "Per Pronipoti di Portoghese",
+        marriage: "Per Matrimonio/Unione Stabile",
+        foreignChildren: "Per i Figli di Stranieri Nati in Portogallo",
+        residenceTime: "Per Durata di Residenza",
+        jewishDescendants: "Per i Discendenti Degli Ebrei Sefarditi",
+        investorVisa: "Visto per Investitori"
+      },
+      itCitizenshipSub: {
+        judicialRoute: "Via Giudiziaria",
+        maternalLine: "Processo Tramite Linea Materna",
+        marriage: "Attraverso il Matrimonio",
+        childrenItalian: "Per i Figli Degli Italiani",
+        trentinos: "Trentini"
+      }
     },
     about: {
       title: "Chi Siamo",

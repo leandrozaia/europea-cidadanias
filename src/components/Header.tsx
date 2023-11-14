@@ -38,31 +38,34 @@ export function Header() {
           </Link>
           <DropdownMenu
             menu={{
-              value: "Cidadania Portuguesa",
+              value: header.ptCitizenship,
               href: "/cidadania-portuguesa"
             }}
             items={[
-              { value: "Para Filhos de Portugueses", href: "/cidadania-portuguesa#filhos-portugueses" },
-              { value: "Para Netos de Portugueses", href: "/cidadania-portuguesa#netos-portugueses" },
-              { value: "Para Bisnetos de Portugueses", href: "/cidadania-portuguesa#bisnetos-portugueses" },
-              { value: "Por Casamento/União Estável", href: "/cidadania-portuguesa#casamento-uniao-estavel" },
-              { value: "Para Filhos de Estrangeiros Nascidos em Portugal", href: "/cidadania-portuguesa#filhos-estrangeiros-nascidos-portugal" },
-              { value: "Por Tempo de Residência", href: "/cidadania-portuguesa#tempo-residencia" },
-              { value: "Para Descendentes de Judeus Sefarditas", href: "/cidadania-portuguesa#descendentes-judeus-sefarditas" },
-              { value: "Visto de Insvestidor", href: "/cidadania-portuguesa#visto-investidor" },
+              { value: header.ptCitizenshipSub.ptChildren, href: "/cidadania-portuguesa#filhos-portugueses" },
+              { value: header.ptCitizenshipSub.ptGrandchildren, href: "/cidadania-portuguesa#netos-portugueses" },
+              { value: header.ptCitizenshipSub.ptGreatGrandchildren, href: "/cidadania-portuguesa#bisnetos-portugueses" },
+              { value: header.ptCitizenshipSub.marriage, href: "/cidadania-portuguesa#casamento-uniao-estavel" },
+              { value: header.ptCitizenshipSub.foreignChildren, href: "/cidadania-portuguesa#filhos-estrangeiros-nascidos-portugal" },
+              { value: header.ptCitizenshipSub.residenceTime, href: "/cidadania-portuguesa#tempo-residencia" },
+              { value: header.ptCitizenshipSub.jewishDescendants, href: "/cidadania-portuguesa#descendentes-judeus-sefarditas" },
+              { value: header.ptCitizenshipSub.investorVisa, href: "/cidadania-portuguesa#visto-investidor" },
           ]} />
           <DropdownMenu
             menu={{
-              value: "Cidadania Italiana",
+              value: header.itCitizenship,
               href: "/cidadania-italiana"
             }}
             items={[
-              { value: "Via Judicial", href: "/cidadania-italiana#via-judicial" },
-              { value: "Processo Via Linha Materna", href: "/cidadania-italiana#processo-via-linha-materna" },
-              { value: "Via Matrimônio", href: "/cidadania-italiana#via-matrimônio" },
-              { value: "Para Filhos de Italiano", href: "/cidadania-italiana#para-filhos-de-italiano" },
-              { value: "Trentinos", href: "/cidadania-italiana#trentinos" },
+              { value: header.itCitizenshipSub.judicialRoute, href: "/cidadania-italiana#via-judicial" },
+              { value: header.itCitizenshipSub.maternalLine, href: "/cidadania-italiana#processo-via-linha-materna" },
+              { value: header.itCitizenshipSub.marriage, href: "/cidadania-italiana#via-matrimônio" },
+              { value: header.itCitizenshipSub.childrenItalian, href: "/cidadania-italiana#para-filhos-de-italiano" },
+              { value: header.itCitizenshipSub.trentinos, href: "/cidadania-italiana#trentinos" },
           ]} />
+          <Link className="text-white" href="/carreira-internacional">
+            {header.career}
+          </Link>
           <Link className="text-white" href="/#services">
             {header.services}
           </Link>
@@ -77,40 +80,44 @@ export function Header() {
         <MdMenu onClick={() => setShow(prev => !prev)} className="flex xl:hidden w-6 h-6 text-white cursor-pointer" />
       </div>
       {show && <nav className="flex flex-col xl:hidden bg-white md:pt-8">
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/">
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-4 px-6" href="/">
           <MdHome className="w-10 h-10 p-2" />
           {header.home}
         </Link>
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/#about-us">
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-4 px-6" href="/#about-us">
           <MdPeopleAlt className="w-10 h-10 p-2" />
           {header.aboutUs}
         </Link>
-        <AccordeonMenu onClick={() => setShow(prev => !prev)} menu="Cidadania Portuguesa" icon={<FaPassport className="w-10 h-10 p-2" />} items={[
-          { value: "Para Filhos de Portugueses", href: "/cidadania-portuguesa#filhos-portugueses" },
-          { value: "Para Netos de Portugueses", href: "/cidadania-portuguesa#netos-portugueses" },
-          { value: "Para Bisnetos de Portugueses", href: "/cidadania-portuguesa#bisnetos-portugueses" },
-          { value: "Por Casamento/União Estável", href: "/cidadania-portuguesa#casamento-uniao-estavel" },
-          { value: "Para Filhos de Estrangeiros Nascidos em Portugal", href: "/cidadania-portuguesa#filhos-estrangeiros-nascidos-portugal" },
-          { value: "Por Tempo de Residência", href: "/cidadania-portuguesa#tempo-residencia" },
-          { value: "Para Descendentes de Judeus Sefarditas", href: "/cidadania-portuguesa#descendentes-judeus-sefarditas" },
-          { value: "Visto de Insvestidor", href: "/cidadania-portuguesa#visto-investidor" },
+        <AccordeonMenu onClick={() => setShow(prev => !prev)} menu={header.ptCitizenship} icon={<FaPassport className="w-10 h-10 p-2" />} items={[
+          { value: header.ptCitizenshipSub.ptChildren, href: "/cidadania-portuguesa#filhos-portugueses" },
+          { value: header.ptCitizenshipSub.ptGrandchildren, href: "/cidadania-portuguesa#netos-portugueses" },
+          { value: header.ptCitizenshipSub.ptGreatGrandchildren, href: "/cidadania-portuguesa#bisnetos-portugueses" },
+          { value: header.ptCitizenshipSub.marriage, href: "/cidadania-portuguesa#casamento-uniao-estavel" },
+          { value: header.ptCitizenshipSub.foreignChildren, href: "/cidadania-portuguesa#filhos-estrangeiros-nascidos-portugal" },
+          { value: header.ptCitizenshipSub.residenceTime, href: "/cidadania-portuguesa#tempo-residencia" },
+          { value: header.ptCitizenshipSub.jewishDescendants, href: "/cidadania-portuguesa#descendentes-judeus-sefarditas" },
+          { value: header.ptCitizenshipSub.investorVisa, href: "/cidadania-portuguesa#visto-investidor" },
         ]} />
-        <AccordeonMenu onClick={() => setShow(prev => !prev)} menu="Cidadania Italiana" icon={<FaPassport className="w-10 h-10 p-2" />} items={[
-          { value: "Via Judicial", href: "/cidadania-italiana#via-judicial" },
-          { value: "Processo Via Linha Materna", href: "/cidadania-italiana#processo-via-linha-materna" },
-          { value: "Via Matrimônio", href: "/cidadania-italiana#via-matrimônio" },
-          { value: "Para Filhos de Italiano", href: "/cidadania-italiana#para-filhos-de-italiano" },
-          { value: "Trentinos", href: "/cidadania-italiana#trentinos" },
+        <AccordeonMenu onClick={() => setShow(prev => !prev)} menu={header.itCitizenship} icon={<FaPassport className="w-10 h-10 p-2" />} items={[
+          { value: header.itCitizenshipSub.judicialRoute, href: "/cidadania-italiana#via-judicial" },
+          { value: header.itCitizenshipSub.maternalLine, href: "/cidadania-italiana#processo-via-linha-materna" },
+          { value: header.itCitizenshipSub.marriage, href: "/cidadania-italiana#via-matrimônio" },
+          { value: header.itCitizenshipSub.childrenItalian, href: "/cidadania-italiana#para-filhos-de-italiano" },
+          { value: header.itCitizenshipSub.trentinos, href: "/cidadania-italiana#trentinos" },
         ]} />
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/#services">
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-4 px-6" href="/carreira-internacional">
+          <FaPassport className="w-10 h-10 p-2" />
+          {header.career}
+        </Link>
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-4 px-6" href="/#services">
           <MdOutlineCategory className="w-10 h-10 p-2" />
           {header.services}
         </Link>
-        <Link className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href="/blog">
+        <Link className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-4 px-6" href="/blog">
           <MdOutlineArticle className="w-10 h-10 p-2" />
           {header.blog}
         </Link>
-        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6" href={asPath === "/" ? "/#footer" : `${asPath}/#footer`}>
+        <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-4 px-6" href={asPath === "/" ? "/#footer" : `${asPath}/#footer`}>
           <MdCall className="w-10 h-10 p-2" />
           {header.contact}
         </Link>
@@ -119,7 +126,7 @@ export function Header() {
             key={l}
             href={asPath}
             locale={l}
-            className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-6 sm:py-4 px-6"
+            className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-4 px-6"
             role="menuitem"
           >
             <Image
