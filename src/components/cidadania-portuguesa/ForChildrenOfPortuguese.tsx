@@ -18,7 +18,7 @@ export function ForChildrenOfPortuguese() {
           A solicitação de cidadania portuguesa está aberta a filhos de cidadãos portugueses, com o critério principal sendo a demonstração inequívoca de parentesco com o pai ou a mãe português(a).
         </p>
         <p className="text-lg text-gray-600 text-justify">
-          É importante destacar que, no caso de filhos de portugueses que adquiriram sua cidadania por via secundária (aquisição), e não diretamente (atribuição) - por exemplo, por serem cônjuges de um português - a concessão da cidadania ao filho é restrita a maiores de idade e sujeita a requisitos adicionais mais específicos. 
+          É importante destacar que, no caso de filhos de portugueses que adquiriram sua cidadania por via secundária (aquisição), e não diretamente (atribuição) - por exemplo, por serem cônjuges de um português - a concessão da cidadania ao filho é restrita a MENORES de idade e sujeita a requisitos adicionais mais específicos. - Art. 2 da Lei de nacionalidade.
         </p>
       </div>
     </section>
