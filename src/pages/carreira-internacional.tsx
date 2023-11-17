@@ -7,9 +7,9 @@ import { getInternationalCareer } from '@/utils/getInternationalCareer'
 import { useRouter } from "next/router"
 
 export default function CarreiraInternacional({ data }: any) {
+  const { locale } = useRouter()
   if (!data) return
   const { footer, internationalCareer } = JSON.parse(data)
-  const { locale } = useRouter()
 
   return (
     <>
