@@ -1,8 +1,15 @@
 import { useState } from 'react'
+import { useRouter } from "next/router"
 
 interface FAQProps {
-  question: string
-  answer: string
+  questionPt: string
+  questionEn: string
+  questionEs: string
+  questionIt: string
+  answerPt: string
+  answerEn: string
+  answerEs: string
+  answerIt: string
 }
 
 interface Props {
@@ -11,6 +18,8 @@ interface Props {
 
 export function Acordeon({ accordeon }: Props) {
   const [show, setShow] = useState(false)
+  const { locale } = useRouter()
+
   return (
     <div className="flex flex-col gap-4">
       <div
@@ -18,13 +27,19 @@ export function Acordeon({ accordeon }: Props) {
         className="flex justify-between items-center bg-main p-6 rounded-2xl text-white cursor-pointer"
       >
         <p className="text-sm">
-          {accordeon.question}
+          {locale === "pt" && accordeon.questionPt}
+          {locale === "en" && accordeon.questionEn}
+          {locale === "es" && accordeon.questionEs}
+          {locale === "it" && accordeon.questionIt}
         </p>
         <p className="text-4xl leading-6">+</p>
       </div>
       {show && (
         <p className="px-6 text-sm text-gray-900 text-justify">
-          {accordeon.answer}
+          {locale === "pt" && accordeon.answerPt}
+          {locale === "en" && accordeon.answerEn}
+          {locale === "es" && accordeon.answerEs}
+          {locale === "it" && accordeon.answerIt}
         </p>
       )}
     </div>

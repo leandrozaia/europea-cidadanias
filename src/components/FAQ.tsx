@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import { translations } from "@/utils/translations"
 
 interface FAQProps {
+  type: string
   questionPt: string
   questionEn: string
   questionEs: string
@@ -85,7 +86,7 @@ export function FAQ({ faqs, footer }: Props) {
         </div>
 
         <div className="w-full flex flex-col gap-6">
-          {faqs.map(faq => (
+          {faqs.filter(faq => faq.type === "faq").map(faq => (
             <div key={faq.questionPt} className="flex flex-col gap-6">
               <Acordeon faq={faq} />
             </div>

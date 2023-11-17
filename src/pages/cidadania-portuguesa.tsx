@@ -1,32 +1,43 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import { ForChildrenOfPortuguese } from '@/components/cidadania-portuguesa/ForChildrenOfPortuguese'
-import { ForGrandchildrenOfPortuguese } from '@/components/cidadania-portuguesa/ForGrandchildrenOfPortuguese'
-import { ForGreatGrandchildrenOfPortuguese } from '@/components/cidadania-portuguesa/ForGreatGrandchildrenOfPortuguese'
-import { ByMarriageOrStableUnion } from '@/components/cidadania-portuguesa/ByMarriageOrStableUnion'
-import { ForChildrenOfForeignersBornInPortugal } from '@/components/cidadania-portuguesa/ForChildrenOfForeignersBornInPortugal'
-import { ByLengthOfResidence } from '@/components/cidadania-portuguesa/ByLengthOfResidence'
-import { ForDescendantsOfSephardicJews } from '@/components/cidadania-portuguesa/ForDescendantsOfSephardicJews'
-import { InvestorVisa } from '@/components/cidadania-portuguesa/InvestorVisa'
+import { PtSection } from '@/components/cidadania-portuguesa/PtSection'
 
 import { getFooter } from '@/utils/getFooter'
+import { getCitizenships } from '@/utils/getCitizenships'
+
+interface Citizenship {
+    ancor: string
+    type: string
+    labelPt: string
+    labelEn: string
+    labelEs: string
+    labelIt: string
+    headingPt: string
+    headingEn: string
+    headingEs: string
+    headingIt: string
+    descriptionPt: string
+    descriptionEn: string
+    descriptionEs: string
+    descriptionIt: string
+    image: {
+      url: string
+    }
+}
 
 export default function CidadaniaPortuguesa({ data }: any) {
   if (!data) return
-  const footer = JSON.parse(data)
+  const { footer, citizenships } = JSON.parse(data)
 
   return (
     <>
       <Header />
       <div className="relative top-[72px] sm:top-[80px]">
-        <ForChildrenOfPortuguese />
-        <ForGrandchildrenOfPortuguese />
-        <ForGreatGrandchildrenOfPortuguese />
-        <ByMarriageOrStableUnion />
-        <ForChildrenOfForeignersBornInPortugal />
-        <ByLengthOfResidence />
-        <ForDescendantsOfSephardicJews />
-        <InvestorVisa />
+        {citizenships
+          .filter((c: Citizenship) => c.type === "portuguesa")
+          .map((c: Citizenship) => (
+            <PtSection key={c.headingPt} citizenship={c} />
+        ))}
         <Footer footer={footer} />
       </div>
     </>
@@ -35,10 +46,14 @@ export default function CidadaniaPortuguesa({ data }: any) {
 
 export async function getStaticProps() {
   const { footer } = await getFooter()
+  const { citizenships } = await getCitizenships()
   
   return {
     props: {
-      data: JSON.stringify(footer) || null
+      data: JSON.stringify({
+        footer,
+        citizenships
+      }) || null
     }
   }
 }

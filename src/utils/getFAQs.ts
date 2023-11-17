@@ -3,7 +3,8 @@ import { fetchHygraphQuery } from "./fetchHygraphQuery"
 export function getFAQs() {
   const query = `
     query MyQuery {
-      faqs {
+      faqs(first: 30) {
+        type
         questionPt
         questionEn
         questionEs
