@@ -79,7 +79,7 @@ export function Services({ services }: Props) {
             className="hidden xl:block absolute bottom-0 -left-[220px] w-auto max-w-[320px] h-[512px]"
           >
             <Image
-              src="/leandro.png"
+              src="/leandro_2.png"
               alt="Imagem do nosso sócio Leandro Zaia"
               width={0}
               height={0}
@@ -115,7 +115,7 @@ export function Services({ services }: Props) {
           {/* Telas médias e pequenas APENAS */}
           <div className="flex flex-col sm:flex-row items-center justify-between">
             <Image
-              src="/leandro.png"
+              src="/leandro_2.png"
               alt="Imagem do nosso sócio Leandro Zaia"
               width={0}
               height={0}

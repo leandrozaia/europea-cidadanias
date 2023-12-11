@@ -1,135 +1,163 @@
+import Image from "next/image"
 import { MdLocationOn, MdPhone, MdAttachEmail } from "react-icons/md"
-import { BsFacebook, BsInstagram, BsWhatsapp, BsLinkedin } from 'react-icons/bs'
-import { useRouter } from "next/router"
 import { translations } from "@/utils/translations"
-
-interface FooterProps {
-  iframe: string
-  address: string
-  addressTwo: string
-  phone: string
-  phoneTwo: string
-  email: string
-  facebookUrl: string
-  instagramUrl: string
-  linkedInUrl: string
-  whatsAppNumber: string
-}
+import { useRouter } from "next/router"
+import emailJs from "@emailjs/browser"
+import { useForm, SubmitHandler } from "react-hook-form"
 
 interface Props {
-  footer: FooterProps
+  footer: {
+    iframe: string
+    address: string
+    addressTwo: string
+    phone: string
+    email: string
+    facebookUrl: string
+    instagramUrl: string
+    linkedInUrl: string
+    whatsAppNumber: string
+  }
+}
+
+interface Inputs {
+  name: string
+  email: string
+  message: string
 }
 
 export function Footer({ footer }: Props) {
   const { locale } = useRouter()
-  const { footerSection } = translations[locale as string]
+  const { footerSection, contactForm } = translations[locale as string]
+
+  const { handleSubmit, register, formState: { errors }, reset } = useForm<Inputs>()
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const templateParams = {
+      from_name: data.name,
+      message: data.message,
+      email: data.email
+    }
+
+    emailJs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      templateParams,
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    )
+    .then((response) => console.log(`Status: ${response.status}`))
+    .catch((error) => console.log(`Error: ${error}`))
+
+    reset()
+  }
 
   return (
-    <footer id="footer" className="bg-second pb-6">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 py-12 px-4 lg:px-0">
+    <footer className="relative w-full flex justify-center">
+      <Image
+        src="/bg_02.png"
+        alt="Imagem de Portugal"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="absolute w-full h-full object-cover"
+      />
+      <div className="absolute w-full h-full bg-main opacity-90" />
+      <div className="relative max-w-5xl w-full my-24 px-4 lg:px-0">
+        <h2 className="text-white text-4xl font-bold uppercase text-center mb-12">
+          {contactForm.title}
+        </h2>
 
-        {/* Portugal */}
-        <div className="w-full">
-          <h3 className="text-3xl text-white font-bold mb-4">
-            {footerSection.address}
-          </h3>
-          <p className="flex gap-2 items-center text-white mb-8">
-            <MdLocationOn className="w-5 h-5" />
-            {footer.address}
-          </p>
-          <h3 className="text-3xl text-white font-bold mb-4">
-            {footerSection.phone}
-          </h3>
-          <p className="flex gap-2 items-center text-white mb-8">
-            <MdPhone className="w-5 h-5" />
-            {footer.phone}
-          </p>
-          <h3 className="text-3xl text-white font-bold mb-4">
-            {footerSection.whatsapp}
-          </h3>
-          <p className="flex gap-2 items-center text-white mb-8">
-            <BsWhatsapp className="w-5 h-5 text-white" />
-            {footer.phone}
-          </p>
-          <h3 className="text-3xl text-white font-bold mb-4">
-            {footerSection.email}
-          </h3>
-          <p className="flex break-all gap-2 items-center text-white mb-8">
-            <MdAttachEmail className="w-5 h-5" />
-            {footer.email}
-          </p>
-          <div className='flex items-center gap-3 md:gap-6'>
-            <a href={footer.facebookUrl} target="_blank" rel="noopener noreferrer">
-              <BsFacebook className="w-5 h-5 text-white" />
-            </a>
-            <a href={footer.instagramUrl} target="_blank" rel="noopener noreferrer">
-              <BsInstagram className="w-5 h-5 text-white" />
-            </a>
-            <a href={footer.linkedInUrl} target="_blank" rel="noopener noreferrer">
-              <BsLinkedin className="w-5 h-5 text-white" />
-            </a>
-            <a href={`https://api.whatsapp.com/send?phone=${footer.whatsAppNumber}`} target="_blank" rel="noopener noreferrer">
-              <BsWhatsapp className="w-5 h-5 text-white" />
-            </a>
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="w-full">
+            <h3 className="text-3xl text-white font-bold mb-4">
+              {footerSection.address}
+            </h3>
+            <p className="flex gap-2 items-center text-white mb-8">
+              <MdLocationOn className="w-5 h-5" />
+              {footer.address}
+            </p>
+            <h3 className="text-3xl text-white font-bold mb-4">
+              {footerSection.addressTwo}
+            </h3>
+            <p className="flex gap-2 items-center text-white mb-8">
+              <MdLocationOn className="w-5 h-5" />
+              {footer.addressTwo}
+            </p>
+            <h3 className="text-3xl text-white font-bold mb-4">
+              {footerSection.phone}
+            </h3>
+            <p className="flex gap-2 items-center text-white mb-8">
+              <MdPhone className="w-5 h-5" />
+              {footer.phone}
+            </p>
+            <h3 className="text-3xl text-white font-bold mb-4">
+              {footerSection.email}
+            </h3>
+            <p className="flex break-all gap-2 items-center text-white mb-8">
+              <MdAttachEmail className="w-5 h-5" />
+              {footer.email}
+            </p>
           </div>
-        </div>
 
-        {/* Brasil */}
-        <div className="w-full my-auto">
-          <h3 className="text-3xl text-white font-bold mb-4">
-            {footerSection.addressTwo}
-          </h3>
-          <p className="flex gap-2 items-center text-white mb-8">
-            <MdLocationOn className="w-5 h-5" />
-            {footer.addressTwo}
-          </p>
-          <h3 className="text-3xl text-white font-bold mb-4">
-            {footerSection.phone}
-          </h3>
-          <p className="flex gap-2 items-center text-white mb-8">
-            <MdPhone className="w-5 h-5" />
-            {footer.phoneTwo}
-          </p>
-          <h3 className="text-3xl text-white font-bold mb-4">
-            {footerSection.whatsapp}
-          </h3>
-          <p className="flex gap-2 items-center text-white mb-8">
-            <BsWhatsapp className="w-5 h-5 text-white" />
-            {footer.phone}
-          </p>
-          <h3 className="text-3xl text-white font-bold mb-4">
-            {footerSection.email}
-          </h3>
-          <p className="flex break-all gap-2 items-center text-white mb-8">
-            <MdAttachEmail className="w-5 h-5" />
-            {footer.email}
-          </p>
-          <div className='flex items-center gap-3 md:gap-6'>
-            <a href={footer.facebookUrl} target="_blank" rel="noopener noreferrer">
-              <BsFacebook className="w-5 h-5 text-white" />
-            </a>
-            <a href={footer.instagramUrl} target="_blank" rel="noopener noreferrer">
-              <BsInstagram className="w-5 h-5 text-white" />
-            </a>
-            <a href={footer.linkedInUrl} target="_blank" rel="noopener noreferrer">
-              <BsLinkedin className="w-5 h-5 text-white" />
-            </a>
-            <a href={`https://api.whatsapp.com/send?phone=${footer.whatsAppNumber}`} target="_blank" rel="noopener noreferrer">
-              <BsWhatsapp className="w-5 h-5 text-white" />
-            </a>
-          </div>
+          <form
+            className="flex flex-col gap-4 w-full"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <input
+              className="p-4 rounded-md"
+              type="text"
+              placeholder={contactForm.name}
+              {...register(
+                "name", { 
+                required: "O nome é obrigatório.", 
+                minLength: { value: 4, message: "O nome deve ter no mínimo 4 caracteres." }, 
+                maxLength: { value: 64, message: "O nome deve ter no máximo 64 caracteres." }
+              })}
+            />
+            {errors.name && <span className="text-sm text-white">{errors.name?.message}</span>}
+            <input
+              className="p-4 rounded-md"
+              type="email"
+              placeholder={contactForm.email}
+              {...register(
+                "email", {
+                  required: "O e-mail é obrigatório.",
+                  minLength: { value: 4, message: "O e-mail deve ter no mínimo 4 caracteres." },
+                  maxLength: { value: 128, message: "O nome deve ter no máximo 128 caracteres." }
+              })}
+            />
+            {errors.email && <span className="text-sm text-white">{errors.email?.message}</span>}
+            <textarea
+              cols={30}
+              rows={10}
+              className="p-4 rounded-md"
+              placeholder={contactForm.message}
+              {...register(
+                "message", {
+                  required: "A mensagem é obrigatória.",
+                  minLength: { value: 4, message: "A mensagem deve ter no mínimo 4 caracteres." },
+                  maxLength: { value: 512, message: "A mensagem deve ter no máximo 512 caracteres." }
+              })}
+            />
+            {errors.message && <span className="text-sm text-white">{errors.message?.message}</span>}
+            <button
+              className="bg-second p-4 rounded-md text-white"
+              type="submit"
+            >
+              {contactForm.button}
+            </button>
+          </form>
         </div>
+        <p className="text-white text-center mt-8">
+          © 2023 Europea Cidadanias. Todos os Direitos Reservados | Desenvolvido por 
+          <a
+            href="https://www.linkedin.com/in/joaovitorcode/"
+            target="_blank"
+            className="ml-1 text-white hover:underline font-bold underline-offset-4"
+          >
+            João Vitor
+          </a>
+        </p>
       </div>
-      <p className="text-white text-center">
-        © 2023 Europea Cidadanias. Todos os Direitos Reservados | Desenvolvido por 
-        <a
-          href="https://www.linkedin.com/in/joaovitorcode/"
-          target="_blank"
-          className="ml-1 text-white hover:underline font-bold underline-offset-4"
-        >
-          João Vitor
-        </a>
-      </p>
     </footer>
   )
 }

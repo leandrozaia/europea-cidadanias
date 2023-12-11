@@ -32,7 +32,7 @@ export function DropdownMenu({ menu, items }: Props) {
       onMouseLeave={esconderDropdown}
       className="relative inline-block text-left group"
     >
-      <Link className="text-white cursor-pointer pb-4" href={menu.href}>
+      <Link className="text-white text-sm cursor-pointer pb-4" href={menu.href}>
         {menu.value}
       </Link>
 

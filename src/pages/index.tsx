@@ -7,7 +7,9 @@ import { FAQ } from '@/components/FAQ'
 import { Footer } from '@/components/Footer'
 import { Testimonials } from '@/components/Testimonials'
 import { OurBlog } from '@/components/OurBlog'
-import { ContactForm } from '@/components/ContactForm'
+import { SpecializedServices } from '@/components/SpecializedServices'
+import { EuropeaCidadania } from '@/components/EuropeaCidadania'
+import { WhatsAppButton } from '@/components/WhatsAppButton'
 
 import { getBanner } from '@/utils/getBanner'
 import { getAboutUs } from '@/utils/getAboutUs'
@@ -41,10 +43,12 @@ export default function Home({ data }: any) {
         <OurTeam members={members} />
         <Testimonials testimonials={testimonials} />
         <OurBlog posts={posts} />
-        <ContactForm footer={footer} />
+        <SpecializedServices />
+        <EuropeaCidadania />
         <FAQ faqs={faqs} footer={footer} />
         <Footer footer={footer} />
       </div>
+      <WhatsAppButton />
     </>
   )
 }

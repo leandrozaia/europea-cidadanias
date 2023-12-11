@@ -5,7 +5,6 @@ import { FaPassport } from "react-icons/fa"
 import { useState } from "react"
 import { useRouter } from "next/router"
 import { translations } from "@/utils/translations"
-import { ToggleLanguage } from "@/components/ToggleLanguage"
 import { DropdownMenu } from "@/components/DropdownMenu"
 import { AccordeonMenu } from "@/components/AccordeonMenu"
 
@@ -29,11 +28,11 @@ export function Header() {
             />
           </div>
         </Link>
-        <nav className="hidden xl:flex gap-6 items-center">
-          <Link className="text-white" href="/">
+        <nav className="hidden xl:flex gap-4 items-center">
+          <Link className="text-white text-sm" href="/">
             {header.home}
           </Link>
-          <Link className="text-white" href="/#about-us">
+          <Link className="text-white text-sm" href="/#about-us">
             {header.aboutUs}
           </Link>
           <DropdownMenu
@@ -63,19 +62,37 @@ export function Header() {
               { value: header.itCitizenshipSub.childrenItalian, href: "/cidadania-italiana#para-filhos-de-italiano" },
               { value: header.itCitizenshipSub.trentinos, href: "/cidadania-italiana#trentinos" },
           ]} />
-          <Link className="text-white" href="/carreira-internacional">
+          <Link className="text-white text-sm" href="/carreira-internacional">
             {header.career}
           </Link>
-          <Link className="text-white" href="/#services">
+          <Link className="text-white text-sm" href="/#services">
             {header.services}
           </Link>
-          <Link className="text-white" href="/blog">
+          <Link className="text-white text-sm" href="/blog">
             {header.blog}
           </Link>
           <Link className="text-main font-medium bg-white rounded-3xl px-4 py-1" href={asPath === "/" ? "/#footer" : `${asPath}/#footer`}>
             {header.contact}
           </Link>
-          <ToggleLanguage />
+          {locales?.filter((l) => l !== locale).map((l) => (
+            <Link
+              key={l}
+              href={asPath}
+              locale={l}
+              className="bg-white rounded-md"
+              role="menuitem"
+            >
+              <Image
+                aria-label={`Escolher o idioma ${l}`}
+                src={`/icon_${l}.png`}
+                alt=''
+                width={0}
+                height={0}
+                sizes='100vw'
+                className='w-10 h-10'
+              />
+            </Link>
+          ))}
         </nav>
         <MdMenu onClick={() => setShow(prev => !prev)} className="flex xl:hidden w-6 h-6 text-white cursor-pointer" />
       </div>
