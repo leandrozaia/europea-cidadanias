@@ -66,6 +66,14 @@ export const translations: any = {
       email: "Digite seu e-mail",
       message: "Digite sua mensagem",
       button: "Enviar Mensagem"
+    },
+    spec: {
+      title: "Serviço Especializado",
+      description: "A Europea Cidadania é especialista em processos de cidadania europeia e vistos internacionais."
+    },
+    why: {
+      title: "Europea Cidadanias",
+      description: "Saiba por que fazer seu processo com a"
     }
   },
   en: {
@@ -135,6 +143,14 @@ export const translations: any = {
       email: "Type your e-mail",
       message: "Type your message",
       button: "Send Message"
+    },
+    spec: {
+      title: "Spec Service",
+      description: "Europea Cidadania specializes in European citizenship processes and international visas."
+    },
+    why: {
+      title: "Europea Citizenships",
+      description: "Find out why you should carry out your process with"
     }
   },
   es: {
@@ -204,6 +220,14 @@ export const translations: any = {
       email: "Escribe tu correo electrónico",
       message: "Escribe tu mensaje",
       button: "Enviar mensaje"
+    },
+    spec: {
+      title: "Servicio Especializado",
+      description: "Europea Cidadania se especializa en procesos de ciudadanía europea y visas internacionales."
+    },
+    why: {
+      title: "Europea Ciudadanías",
+      description: "Descubre por qué debes realizar tu trámite con"
     }
   },
   it: {
@@ -273,6 +297,14 @@ export const translations: any = {
       email: "Digita la tua email",
       message: "Digita il tuo messaggio",
       button: "Invia messaggio"
+    },
+    spec: {
+      title: "Servizio specializzato",
+      description: "Europea Cidadania è specializzata in processi di cittadinanza europea e visti internazionali."
+    },
+    why: {
+      title: "Europea Cittadinanze",
+      description: "Scopri perché dovresti portare avanti il ​​tuo processo con"
     }
   },
 }

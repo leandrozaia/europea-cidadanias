@@ -2,7 +2,24 @@ import Image from "next/image"
 import { MdCheckCircle } from "react-icons/md"
 import { motion } from "framer-motion"
 
-export function EuropeaCidadania() {
+import { useRouter } from "next/router"
+import { translations } from "@/utils/translations"
+
+interface Why {
+  titlePt: string
+  titleEn: string
+  titleEs: string
+  titleIt: string
+}
+
+interface Props {
+  whies: Why[]
+}
+
+export function EuropeaCidadania({ whies }: Props) {
+  const { locale } = useRouter()
+  const { why } = translations[locale as string]
+
   return (
     <section className="relative w-full flex justify-center">
       <Image
@@ -17,66 +34,23 @@ export function EuropeaCidadania() {
       <div className="relative max-w-5xl w-full flex flex-col md:flex-row my-24 px-4 lg:px-0">
         <div>
           <p className="text-second text-xl uppercase mb-4">
-            Saiba por que fazer seu processo com a
+            {why.description}
           </p>
           <h2 className="text-main text-4xl font-bold uppercase underline underline-offset-8 mb-12">
-            Europea Cidadanias
+            {why.title}
           </h2>
           <ul>
-            <li className="mb-4 flex items-center gap-2">
-              <MdCheckCircle className="text-main" />
-              <span className="w-full">
-                Escritórios com sedes no Brasil, Itália e Portugal
-              </span>
-            </li>
-            <li className="mb-4 flex items-center gap-2">
-              <MdCheckCircle className="text-main" />
-              <span className="w-full">
-                Atendimento personalizado via vídeo chamada
-              </span>
-            </li>
-            <li className="mb-4 flex items-center gap-2">
-              <MdCheckCircle className="text-main" />
-              <span className="w-full">
-                Investigação genealógica
-              </span>
-            </li>
-            <li className="mb-4 flex items-center gap-2">
-              <MdCheckCircle className="text-main" />
-              <span className="w-full">
-                Busca de certidões brasileiras e estrangeiras
-              </span>
-            </li>
-            <li className="mb-4 flex items-center gap-2">
-              <MdCheckCircle className="text-main" />
-              <span className="w-full">
-                Elaboramos e acompanhamos o seu processo do início ao fim
-              </span>
-            </li>
-            <li className="mb-4 flex items-center gap-2">
-              <MdCheckCircle className="text-main" />
-              <span className="w-full">
-                Reconhecimento de cidadanias europeias em tempo recorde
-              </span>
-            </li>
-            <li className="mb-4 flex items-center gap-2">
-              <MdCheckCircle className="text-main" />
-              <span className="w-full">
-                Suporte a progressão de carreira internacional
-              </span>
-            </li>
-            <li className="mb-4 flex items-center gap-2">
-              <MdCheckCircle className="text-main" />
-              <span className="w-full">
-                Melhor custo benefício, pagamento facilitado
-              </span>
-            </li>
-            <li className="mb-4 flex items-center gap-2">
-              <MdCheckCircle className="text-main" />
-              <span className="w-full">
-                Somos mais do que uma empresa, somos uma família!
-              </span>
-            </li>
+            {whies.map((why) => (
+              <li key={why.titlePt} className="mb-4 flex items-center gap-2">
+                <MdCheckCircle className="text-main" />
+                <span className="w-full">
+                  {locale === "pt" && why.titlePt}
+                  {locale === "en" && why.titleEn}
+                  {locale === "es" && why.titleEs}
+                  {locale === "it" && why.titleIt}
+                </span>
+              </li>
+            ))}
           </ul>
         </div>
 

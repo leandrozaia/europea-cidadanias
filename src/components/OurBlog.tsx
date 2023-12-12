@@ -2,6 +2,11 @@ import { Thumbnail } from "@/components/Thumbnail"
 import { useRouter } from "next/router"
 import { translations } from "@/utils/translations"
 
+import Slider from "react-slick"
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import { CustomPrevArrow, CustomNextArrow } from "@/components/CarouselCustoms"
+
 interface PostProps {
   titlePt: string
   titleEn: string
@@ -39,14 +44,32 @@ export function OurBlog({ posts }: Props) {
   const { locale } = useRouter()
   const { ourBlog } = translations[locale as string]
 
-  const handlePosts = () => {
-    const thumbnails: any = []
-    for (let i = 0; i < 3; i++) {
-      thumbnails.push(
-        <Thumbnail key={posts[i]?.slug} post={posts[i]} />
-      )
-    }
-    return thumbnails
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: true,
+    prevArrow: <CustomPrevArrow custom="bg-white text-red-900 rounded-full opacity-100 top-[39.9%] left-4" />,
+    nextArrow: <CustomNextArrow custom="bg-white text-red-900 rounded-full opacity-100 top-[39.9%] right-4" />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   }
 
   return (
@@ -56,9 +79,13 @@ export function OurBlog({ posts }: Props) {
           {ourBlog.title}
         </h2>
 
-        <div className="w-full flex flex-col md:flex-row gap-6">
-          {handlePosts()}
-        </div>
+        <Slider {...settings} className="max-w-5xl mx-auto mb-12 z-10">
+          {posts.map((post: PostProps) => (
+            <div key={post.titlePt} className="p-3">
+              <Thumbnail post={post} />
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   )

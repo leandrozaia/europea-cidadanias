@@ -115,14 +115,6 @@ export function Services({ services }: Props) {
           {/* Telas médias e pequenas APENAS */}
           <div className="flex flex-col sm:flex-row items-center justify-between">
             <Image
-              src="/leandro_2.png"
-              alt="Imagem do nosso sócio Leandro Zaia"
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="block xl:hidden bottom-0 -left-[220px] w-auto max-w-[320px] h-[512px] object-cover"
-            />
-            <Image
               src="/mateus.png"
               alt="Imagem do nosso sócio Mateus Dallabrida"
               width={0}

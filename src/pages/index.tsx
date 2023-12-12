@@ -7,7 +7,7 @@ import { FAQ } from '@/components/FAQ'
 import { Footer } from '@/components/Footer'
 import { Testimonials } from '@/components/Testimonials'
 import { OurBlog } from '@/components/OurBlog'
-import { SpecializedServices } from '@/components/SpecializedServices'
+import { SpecServices } from '@/components/SpecServices'
 import { EuropeaCidadania } from '@/components/EuropeaCidadania'
 import { WhatsAppButton } from '@/components/WhatsAppButton'
 
@@ -19,6 +19,8 @@ import { getTestimonials } from '@/utils/getTestimonials'
 import { getPosts } from '@/utils/getPosts'
 import { getFAQs } from '@/utils/getFAQs'
 import { getFooter } from '@/utils/getFooter'
+import { getSpecializedServices } from '@/utils/getSpecializedServices'
+import { getWhies } from '@/utils/getWhies'
 
 export default function Home({ data }: any) {
   if (!data) return
@@ -30,7 +32,9 @@ export default function Home({ data }: any) {
     testimonials,
     posts,
     faqs,
-    footer
+    footer,
+    specializedServices,
+    whies
   } = JSON.parse(data)
 
   return (
@@ -43,8 +47,8 @@ export default function Home({ data }: any) {
         <OurTeam members={members} />
         <Testimonials testimonials={testimonials} />
         <OurBlog posts={posts} />
-        <SpecializedServices />
-        <EuropeaCidadania />
+        <SpecServices specServices={specializedServices} />
+        <EuropeaCidadania whies={whies} />
         <FAQ faqs={faqs} footer={footer} />
         <Footer footer={footer} />
       </div>
@@ -62,7 +66,9 @@ export async function getStaticProps() {
   const { posts } = await getPosts()
   const { faqs } = await getFAQs()
   const { footer } = await getFooter()
-  
+  const { specializedServices } = await getSpecializedServices()
+  const { whies } = await getWhies()
+
   return {
     props: {
       data: JSON.stringify({
@@ -73,7 +79,9 @@ export async function getStaticProps() {
         testimonials,
         posts,
         faqs,
-        footer
+        footer,
+        specializedServices,
+        whies
       }) || null
     }
   }
