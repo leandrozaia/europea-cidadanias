@@ -96,7 +96,7 @@ export function Header() {
         </nav>
         <MdMenu onClick={() => setShow(prev => !prev)} className="flex xl:hidden w-6 h-6 text-white cursor-pointer" />
       </div>
-      {show && <nav className="flex flex-col xl:hidden bg-white md:pt-8">
+      {show && <nav className="flex flex-col xl:hidden bg-white max-h-[580px] overflow-y-auto md:pt-8">
         <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-4 px-6" href="/">
           <MdHome className="w-10 h-10 p-2" />
           {header.home}
