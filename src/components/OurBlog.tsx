@@ -5,7 +5,7 @@ import { translations } from "@/utils/translations"
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { CustomPrevArrow, CustomNextArrow } from "@/components/CarouselCustoms"
+import { CustomPrevArrow, CustomNextArrow } from "@/components/CarouselCustoms2"
 
 interface PostProps {
   titlePt: string
@@ -52,8 +52,8 @@ export function OurBlog({ posts }: Props) {
     autoplay: true,
     autoplaySpeed: 5000,
     arrows: true,
-    prevArrow: <CustomPrevArrow custom="bg-white text-red-900 rounded-full opacity-100 top-[39.9%] left-4" />,
-    nextArrow: <CustomNextArrow custom="bg-white text-red-900 rounded-full opacity-100 top-[39.9%] right-4" />,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
     responsive: [
       {
         breakpoint: 768,

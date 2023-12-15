@@ -5,7 +5,7 @@ import { translations } from "@/utils/translations"
 import Slider from "react-slick"
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { CustomPrevArrow, CustomNextArrow } from "@/components/CarouselCustoms"
+import { CustomPrevArrow, CustomNextArrow } from "@/components/CarouselCustoms2"
 
 import { SpecService } from "../components/SpecService"
 
@@ -40,8 +40,8 @@ export function SpecServices({ specServices }: Props) {
     autoplay: true,
     autoplaySpeed: 5000,
     arrows: true,
-    prevArrow: <CustomPrevArrow custom="bg-white text-red-900 rounded-full opacity-100 top-[40%] left-4" />,
-    nextArrow: <CustomNextArrow custom="bg-white text-red-900 rounded-full opacity-100 top-[40%] right-4" />,
+    prevArrow: <CustomPrevArrow custom="top-[50%]" />,
+    nextArrow: <CustomNextArrow custom="top-[50%]" />,
     responsive: [
       {
         breakpoint: 768,
