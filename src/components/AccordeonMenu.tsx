@@ -23,7 +23,7 @@ export function AccordeonMenu({ menu, items, icon, onClick }: Props) {
 
   return (
     <div className="w-full hover:bg-gray-100">
-      <div className="w-full flex justify-between items-center">
+      <div className="relative w-full flex justify-between items-center">
         <span
           onClick={handleItems}
           className="w-full flex gap-4 items-center font-medium text-main py-4 px-6 cursor-pointer"
