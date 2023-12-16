@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link rel="icon" href="#" />
+        <link rel="icon" href="/logo_03.png" />
         <meta name="description" content="Europea Cidadanias" />
       </Head>
       <body>
