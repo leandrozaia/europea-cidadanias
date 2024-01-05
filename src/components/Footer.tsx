@@ -51,7 +51,7 @@ export function Footer({ footer }: Props) {
   }
 
   return (
-    <footer className="relative w-full flex justify-center">
+    <footer id="footer" className="relative w-full flex justify-center">
       <Image
         src="/bg_02.png"
         alt="Imagem de Portugal"
