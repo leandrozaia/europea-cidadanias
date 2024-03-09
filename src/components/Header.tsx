@@ -65,12 +65,18 @@ export function Header() {
           <Link className="text-white text-sm" href="/carreira-internacional">
             {header.career}
           </Link>
-          <Link className="text-white text-sm" href="/#services">
-            {header.services}
-          </Link>
-          <Link className="text-white text-sm" href="/blog">
-            {header.blog}
-          </Link>
+          <DropdownMenu
+            menu={{
+              value: header.otherServices,
+              href: ""
+            }}
+            items={[
+              { value: header.esCitizenship, href: "/cidadania-espanhola" },
+              { value: header.alCitizenship, href: "/cidadania-alema" },
+              { value: header.blog, href: "/blog" },
+              { value: header.services, href: "/#services" },
+            ]}
+          />
           <Link className="text-main font-medium bg-white rounded-3xl px-4 py-1" href={asPath === "/" ? "/#footer" : `${asPath}/#footer`}>
             {header.contact}
           </Link>
@@ -121,6 +127,21 @@ export function Header() {
           { value: header.itCitizenshipSub.marriage, href: "/cidadania-italiana#via-matrimônio" },
           { value: header.itCitizenshipSub.childrenItalian, href: "/cidadania-italiana#para-filhos-de-italiano" },
           { value: header.itCitizenshipSub.trentinos, href: "/cidadania-italiana#trentinos" },
+        ]} />
+        <AccordeonMenu onClick={() => setShow(prev => !prev)} menu={header.esCitizenship} icon={<FaPassport className="w-10 h-10 p-2" />} items={[
+          { value: header.esCitizenshipSub.byChoice, href: "/cidadania-espanhola#nacionalidade-por-opção" },
+          { value: header.esCitizenshipSub.democraticMemory, href: "/cidadania-espanhola#lei-memoria-democratica" },
+          { value: header.esCitizenshipSub.byResidence, href: "/cidadania-espanhola#nacionalidade-por-residencia" },
+          { value: header.esCitizenshipSub.specialcases, href: "/cidadania-espanhola#casos-especiais" },
+          { value: header.esCitizenshipSub.birthCertificate, href: "/cidadania-espanhola#carta-naturaleza" },
+        ]} />
+        <AccordeonMenu onClick={() => setShow(prev => !prev)} menu={header.alCitizenship} icon={<FaPassport className="w-10 h-10 p-2" />} items={[
+          { value: header.alCitizenshipSub.byDescent, href: "/cidadania-alema#aquisicao-por-descendencia" },
+          { value: header.alCitizenshipSub.byLegitimation, href: "/cidadania-alema#aquisicao-por-legitimacao" },
+          { value: header.alCitizenshipSub.byBirthInGermany, href: "/cidadania-alema#aquisicao-por-nascimento-na-alemanha" },
+          { value: header.alCitizenshipSub.byAdoption, href: "/cidadania-alema#aquisicao-por-adocao" },
+          { value: header.alCitizenshipSub.throughMarriage, href: "/cidadania-alema#aquisicao-por-meio-de-casamento" },
+          { value: header.alCitizenshipSub.byNaturalization, href: "/cidadania-alema#aquisicao-por-naturalizacao" },
         ]} />
         <Link onClick={() => setShow(prev => !prev)} className="flex items-center gap-4 text-main bg-white hover:bg-gray-100 font-medium py-4 px-6" href="/carreira-internacional">
           <FaPassport className="w-10 h-10 p-2" />

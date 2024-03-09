@@ -3,7 +3,7 @@ import { fetchHygraphQuery } from "./fetchHygraphQuery"
 export function getCitizenships() {
   const query = `
     query MyQuery {
-      citizenships(first: 30) {
+      citizenships(first: 40) {
         ancor
         type
         labelPt

@@ -6,7 +6,10 @@ export const translations: any = {
     header: {
       home: "Início",
       aboutUs: "Sobre Nós",
-      services: "Serviços",
+      services: "Mais Serviços",
+      otherServices: "Outros Serviços",
+      esCitizenship: "Cidadania Espanhola",
+      alCitizenship: "Cidadania Alemã",
       blog: "Blog",
       contact: "Contato",
       ptCitizenship: "Cidadania Portuguesa",
@@ -28,7 +31,22 @@ export const translations: any = {
         marriage: "Via Matrimônio",
         childrenItalian: "Para Filhos de Italianos",
         trentinos: "Trentinos"
-      }
+      },
+      esCitizenshipSub: {
+        byChoice: "Nacionalidade por opção",
+        democraticMemory: "Nacionalidade pela lei de memória democrática",
+        byResidence: "Nacionalidade por residência",
+        specialcases: "Casos especiais",
+        birthCertificate: "Carta de naturaleza"
+      },
+      alCitizenshipSub: {
+        byDescent: "Aquisição por descendência",
+        byLegitimation: "Aquisição por legitimação",
+        byBirthInGermany: "Aquisição por nascimento na Alemanha",
+        byAdoption: "Aquisição por Adoção",
+        throughMarriage: "Aquisição por meio de casamento",
+        byNaturalization: "Aquisição por naturalização"
+      },
     },
     about: {
       title: "Sobre Nós",
@@ -83,7 +101,10 @@ export const translations: any = {
     header: {
       home: "Home",
       aboutUs: "About Us",
-      services: "Services",
+      services: "More Services",
+      otherServices: "Other Services",
+      esCitizenship: "Spanish Citizenship",
+      alCitizenship: "German citizenship",
       blog: "Blog",
       contact: "Contact",
       ptCitizenship: "Portuguese Citizenship",
@@ -105,7 +126,22 @@ export const translations: any = {
         marriage: "Via Marriage",
         childrenItalian: "For Children of Italians",
         trentinos: "Trentinos"
-      }
+      },
+      esCitizenshipSub: {
+        byChoice: "Nationality by choice",
+        democraticMemory: "Nationality by democratic memory law",
+        byResidence: "Nationality by residence",
+        specialcases: "Special cases",
+        birthCertificate: "Birth certificate"
+      },
+      alCitizenshipSub: {
+        byDescent: "Acquisition by descent",
+        byLegitimation: "Acquisition by legitimation",
+        byBirthInGermany: "Acquisition by birth in Germany",
+        byAdoption: "Acquisition by Adoption",
+        throughMarriage: "Acquisition through marriage",
+        byNaturalization: "Acquisition by naturalization"
+      },
     },
     about: {
       title: "About Us",
@@ -160,7 +196,10 @@ export const translations: any = {
     header: {
       home: "Comenzar",
       aboutUs: "Sobre Nosotros",
-      services: "Servicios",
+      services: "Más Servicios",
+      otherServices: "Otros Servicios",
+      esCitizenship: "Ciudadanía Española",
+      alCitizenship: "Ciudadanía Alemana",
       blog: "Blog",
       contact: "Contacto",
       ptCitizenship: "Ciudadanía Portuguesa",
@@ -182,7 +221,22 @@ export const translations: any = {
         marriage: "A Través del Matrimonio",
         childrenItalian: "Para Hijos de Italianos",
         trentinos: "Trentinos"
-      }
+      },
+      esCitizenshipSub: {
+        byChoice: "Nacionalidad por elección",
+        democraticMemory: "Nacionalidad por ley de memoria democrática",
+        byResidence: "Nacionalidad por residencia",
+        specialcases: "Casos especiales",
+        birthCertificate: "Certificado de nacimiento"
+      },
+      alCitizenshipSub: {
+        byDescent: "Adquisición por descendencia",
+        byLegitimation: "Adquisición por legitimación",
+        byBirthInGermany: "Adquisición por nacimiento en Alemania",
+        byAdoption: "Adquisición por adopción",
+        throughMarriage: "Adquisición por matrimonio",
+        byNaturalization: "Adquisición por naturalización"
+      },
     },
     about: {
       title: "Sobre Nosotros",
@@ -237,7 +291,10 @@ export const translations: any = {
     header: {
       home: "Inizio",
       aboutUs: "Chi Siamo",
-      services: "Servizi",
+      services: "Più Servizi",
+      otherServices: "Altri Servizi",
+      esCitizenship: "Cittadinanza Spagnola",
+      alCitizenship: "Cittadinanza Tedesca",
       blog: "Blog",
       contact: "Contatto",
       ptCitizenship: "Cittadinanza Portoghese",
@@ -259,7 +316,22 @@ export const translations: any = {
         marriage: "Attraverso il Matrimonio",
         childrenItalian: "Per i Figli Degli Italiani",
         trentinos: "Trentini"
-      }
+      },
+      esCitizenshipSub: {
+        byChoice: "Nazionalità per scelta",
+        democraticMemory: "La nazionalità secondo la legge sulla memoria democratica",
+        byResidence: "Nazionalità per residenza",
+        specialcases: "Casi speciali",
+        birthCertificate: "Certificato di nascita"
+      },
+      alCitizenshipSub: {
+        byDescent: "Acquisizione per discendenza",
+        byLegitimation: "Acquisizione per legittimazione",
+        byBirthInGermany: "Acquisizione per nascita in Germania",
+        byAdoption: "Acquisto mediante adozione",
+        throughMarriage: "Acquisto tramite matrimonio",
+        byNaturalization: "Acquisizione per naturalizzazione"
+      },
     },
     about: {
       title: "Chi Siamo",
