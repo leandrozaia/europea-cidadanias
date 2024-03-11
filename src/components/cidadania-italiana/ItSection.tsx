@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { useRouter } from "next/router"
 import { Acordeon } from "@/components/cidadania-italiana/Accordeon"
 
@@ -42,11 +43,20 @@ export function ItSection({ citizenship, faqs }: Citizenship) {
 
   return (
     <section className="flex flex-col gap-12 py-12">
+      <Image
+        src={citizenship.image.url}
+        alt=""
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="block sm:hidden w-full h-44 object-cover"
+      />
       <div
         id={citizenship.ancor}
-        className="bg-fixed bg-cover bg-center h-44"
+        className="hidden sm:block bg-fixed bg-cover bg-center h-44"
         style={{ backgroundImage: `url('${citizenship.image.url}')` }}
       />
+
       <div className="max-w-5xl mx-auto px-4 lg:px-0">
         <h2 className="text-4xl text-gray-800 font-bold text-center leading-tight pb-12">
           {locale === "pt" && citizenship.labelPt}

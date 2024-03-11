@@ -1,6 +1,6 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import { EsSection } from '@/components/cidadania-espanhola/EsSection'
+import { AlSection } from '@/components/cidadania-alema/AlSection'
 
 import { getFooter } from '@/utils/getFooter'
 import { getCitizenships } from '@/utils/getCitizenships'
@@ -36,7 +36,7 @@ export default function CidadaniaAlema({ data }: any) {
         {citizenships
           .filter((c: Citizenship) => c.type === "alema")
           .map((c: Citizenship) => (
-            <EsSection key={c.headingPt} citizenship={c} />
+            <AlSection key={c.headingPt} citizenship={c} />
         ))}
         <Footer footer={footer} />
       </div>
