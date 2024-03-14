@@ -29,6 +29,7 @@ export function EsSection({ citizenship }: Citizenship) {
   return (
     <section className="flex flex-col gap-12 py-12">
       <Image
+        id={citizenship.ancor}
         src={citizenship.image.url}
         alt=""
         width={0}

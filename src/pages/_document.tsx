@@ -6,6 +6,7 @@ export default function Document() {
       <Head>
         <link rel="icon" href="/logo_03.png" />
         <meta name="description" content="Europea Cidadanias" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body>
         <Main />
