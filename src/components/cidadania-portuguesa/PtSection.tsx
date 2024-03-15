@@ -43,7 +43,7 @@ export function PtSection({ citizenship }: Citizenship) {
         style={{ backgroundImage: `url('${citizenship.image.url}')` }}
       />
       <div className="max-w-5xl mx-auto px-4 lg:px-0">
-        <h2 className="text-4xl text-gray-800 font-bold text-center leading-tight pb-12">
+        <h2 className="text-3xl sm:text-4xl text-gray-800 font-bold text-center leading-tight pb-12">
           {locale === "pt" && citizenship.labelPt}
           {locale === "en" && citizenship.labelEn}
           {locale === "es" && citizenship.labelEs}
@@ -56,7 +56,7 @@ export function PtSection({ citizenship }: Citizenship) {
           </div>
         </h2>
         {locale === "pt" && citizenship.descriptionPt.split('\n\n').map((paragraph, index) => (
-          <p key={index} className="text-lg text-gray-600 text-justify pb-4">
+          <p key={index} className="text-base sm:text-lg text-gray-600 text-justify pb-4">
             {paragraph}
           </p>
         ))}
